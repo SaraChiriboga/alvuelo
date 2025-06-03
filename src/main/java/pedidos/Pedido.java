@@ -12,6 +12,10 @@ public abstract class Pedido extends Restaurante {
     private LinkedList<Plato> carrito;
     private String estado;
 
+    public Pedido(String horario, String ubicacion, String nombre, String idRestaurante, boolean activo) {
+        super(horario, ubicacion, nombre, idRestaurante, activo);
+    }
+
     //REALIZAR PEDIDO
     public void realizarPedido(){
 

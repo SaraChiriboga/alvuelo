@@ -13,6 +13,57 @@ public class Restaurante{
     private String idRestaurante;
     private boolean activo;
 
+    //constructor
+
+    public Restaurante(String horario, String ubicacion, String nombre, String idRestaurante, boolean activo) {
+        this.horario = horario;
+        this.ubicacion = ubicacion;
+        this.nombre = nombre;
+        this.idRestaurante = idRestaurante;
+        this.activo = activo;
+    }
+
+    //getters y setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public String getIdRestaurante() {
+        return idRestaurante;
+    }
+
+    public void setIdRestaurante(String idRestaurante) {
+        this.idRestaurante = idRestaurante;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
     //AGREGAR RESTAURANTE
     public void addRestaurante(){
 

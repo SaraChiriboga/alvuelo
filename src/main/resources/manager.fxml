@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="505.0" prefWidth="700.0" style="-fx-background-color: #2e4053;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerController">
+   <children>
+      <AnchorPane prefHeight="506.0" prefWidth="170.0" style="-fx-background-color: #222d3a;">
+         <children>
+            <Button fx:id="restaurantes" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#mostrarRestaurantes" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: #222d3a;" text="🍴 Restaurantes" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="menus" layoutX="-1.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#mostrarMenus" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: #222d3a;" text="☰ Menús" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="usuarios" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#mostrarUsuarios" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: #222d3a;" text="👤 Usuarios" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="15.0" layoutY="25.0" text="Panel de Control" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="14.0" layoutY="52.0" prefHeight="0.0" prefWidth="141.0" />
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="stackContentArea" layoutX="170.0" prefHeight="505.0" prefWidth="533.0" />
+   </children>
+</AnchorPane>
