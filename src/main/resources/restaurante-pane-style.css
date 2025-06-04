@@ -1,0 +1,81 @@
+#estadisticas_label, #restaurantes_label{
+    -fx-font-family: 'Poppins ExtraBold', 'Poppins', sans-serif;
+    -fx-font-weight: 800; /* ExtraBold */
+    -fx-font-size: 24px;
+    -fx-text-fill: #000000;
+}
+
+#agregarButton, #eliminarButton, #editarButton{
+    -fx-background-color: #c23939;
+    -fx-border-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-border-radius: 20px;
+}
+
+#guardarCambios{
+    -fx-background-color: ffffff;
+    -fx-border-color: transparent;
+    -fx-text-fill: #c23939;
+}
+
+#comisiones, #numusuarios, #ventas{
+    -fx-font-family: 'Poppins ExtraBold', 'Poppins', sans-serif;
+    -fx-font-weight: 800; /* ExtraBold */
+    -fx-font-size: 15px;
+    -fx-text-fill: #ffffff;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10px;
+    -fx-control-inner-background: #fdf7f4;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-alignment: CENTER;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+    -fx-border-radius: 20px;
+}
+
+.table-view .column-header, 
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 15px;
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-weight: 800; /* ExtraBold */
+    -fx-text-fill: #000000;
+    -fx-alignment: CENTER;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 8px;
+    -fx-border-radius: 12px;
+    -fx-border-color: #a8a6a5;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 5, 0, 0, 2);
+    -fx-alignment: CENTER;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #000000;
+}
+
+.table-cell {
+    -fx-font-size: 12px;
+    -fx-padding: 8px;
+    -fx-text-fill: #333333;
+}

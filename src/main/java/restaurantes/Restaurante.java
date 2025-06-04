@@ -13,8 +13,19 @@ public class Restaurante{
     private String idRestaurante;
     private boolean activo;
 
-    //constructor
+    public boolean modificado;
+    private boolean esNuevo = false;
 
+    public boolean isNuevo() {
+        return esNuevo;
+    }
+
+    public void setNuevo(boolean esNuevo) {
+        this.esNuevo = esNuevo;
+    }
+
+
+    //constructor
     public Restaurante(String horario, String ubicacion, String nombre, String idRestaurante, boolean activo) {
         this.horario = horario;
         this.ubicacion = ubicacion;
@@ -62,6 +73,13 @@ public class Restaurante{
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    public boolean isModificado() {
+        return modificado;
+    }
+    public void setModificado(boolean modificado) {
+        this.modificado = modificado;
     }
 
     //AGREGAR RESTAURANTE
