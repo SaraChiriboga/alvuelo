@@ -1,32 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: FFE1CD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: FFE1CD;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerController">
    <children>
       <AnchorPane fx:id="sidebar" prefHeight="600.0" prefWidth="170.0" style="-fx-background-color: CB5353;">
          <children>
-            <Button fx:id="restaurantes" alignment="CENTER" contentDisplay="CENTER" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#mostrarRestaurantes" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: CB5353;" text="🍴 Restaurantes" textFill="WHITE">
+            <Button fx:id="restaurantes" alignment="CENTER" contentDisplay="CENTER" layoutY="216.0" mnemonicParsing="false" onMouseClicked="#mostrarRestaurantes" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: CB5353;" text="🍴 Restaurantes" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
-            <Button fx:id="menus" alignment="CENTER" layoutX="-1.0" layoutY="121.0" mnemonicParsing="false" onMouseClicked="#mostrarMenus" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: CB5353;" text="☰ Menús" textFill="WHITE">
+            <Button fx:id="menus" alignment="CENTER" layoutX="-1.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#mostrarMenus" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: CB5353;" text="☰ Menús" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
-            <Button fx:id="usuarios" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#mostrarUsuarios" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: CB5353;" text="👤 Usuarios" textFill="WHITE">
+            <Button fx:id="usuarios" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="304.0" mnemonicParsing="false" onMouseClicked="#mostrarUsuarios" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: CB5353;" text="👤 Usuarios" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
+                  <Font size="17.0" />
                </font>
+            </Button>
+            <ImageView fitHeight="121.0" fitWidth="114.0" layoutX="27.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="15.0" layoutY="170.0" text="Panel de control" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="19.0" layoutY="197.0" prefHeight="4.0" prefWidth="134.0" />
+            <Button fx:id="salirSesion" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="534.0" mnemonicParsing="false" onMouseClicked="#cerrarSesion" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #9A3131; -fx-border-radius: 30; -fx-background-radius: 30;" text="🚪 Salir" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <effect>
+                  <DropShadow height="18.07" radius="4.0175" width="0.0">
+                     <color>
+                        <Color opacity="0.4541984796524048" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
          </children>
       </AnchorPane>
       <StackPane fx:id="stackContentArea" layoutX="170.0" prefHeight="600.0" prefWidth="729.0" />
+      <Pane prefHeight="44.0" prefWidth="900.0" styleClass="barraSuperior">
+         <children>
+            <Label layoutX="14.0" layoutY="10.0" text="Al Vuelo Manager" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Black" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="cerrar" layoutX="847.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#cerrarPrograma" style="-fx-background-color: transparent;" text="✖" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="minimizar" layoutX="802.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#minimizarPrograma" style="-fx-background-color: transparent;" text="➖" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

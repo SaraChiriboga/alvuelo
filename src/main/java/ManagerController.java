@@ -4,8 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.util.Callback;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -57,11 +55,14 @@ public class ManagerController implements Initializable {
 
     @FXML
     private Button guardarCambios;
+    @FXML
+    private Button cerrar;
+    @FXML
+    private Button minimizar;
 
     // Lista de datos
     private ObservableList<Restaurante> listaRestaurantes = FXCollections.observableArrayList();
 
-    // Conexión a base de datos
     private DataBaseAlvuelo db = new DataBaseAlvuelo();
     private Connection alvuelo = db.getConnection();
 
@@ -72,25 +73,33 @@ public class ManagerController implements Initializable {
 
     // MÉTODOS PARA MOSTRAR LAS DIFERENTES APARTADOS
     @FXML
-    void mostrarMenus(MouseEvent event) {
+    void mostrarMenus(MouseEvent event) throws IOException {
         changeButtonColor(menus, "#c23939", "WHITE");
         changeButtonColor(restaurantes, "#CB5353", "WHITE");
         changeButtonColor(usuarios, "#CB5353", "WHITE");
-        // Aquí cargarías la vista de menús si es necesario
+
+        // Cargar el FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("menusManager.fxml"));
+        Parent fxml = loader.load();
+        // Limpiar y mostrar el nuevo contenido
+        stackContentArea.getChildren().clear();
+        stackContentArea.getChildren().add(fxml);
     }
 
-    /* IMPORTANTE: por alguna razon, las columnas se intercambian y por consiguiente, el contenido de cada atributo de Restaurante
-    * ID = Horario*/
     @FXML
     void mostrarRestaurantes(MouseEvent event) throws IOException, SQLException {
-        // Cargar el FXML
+        // Cargar el FXML dashboard de restaurantes
         FXMLLoader loader = new FXMLLoader(getClass().getResource("restaurantesManager.fxml"));
-        Parent fxml = loader.load();
+        Parent fxml = null;
+        try {
+            fxml = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         // Limpiar y mostrar el nuevo contenido
         stackContentArea.getChildren().clear();
         stackContentArea.getChildren().add(fxml);
-
         // Cambiar colores de botones
         changeButtonColor(restaurantes, "#c23939", "WHITE");
         changeButtonColor(usuarios, "#CB5353", "WHITE");
@@ -120,7 +129,6 @@ public class ManagerController implements Initializable {
         // Cargar los datos
         llenarTablaDatosRestaurantes();
     }
-
     // metodo auxiliar para cargar datos (extrae la lógica de carga)
     private void llenarTablaDatosRestaurantes() throws SQLException {
         listaRestaurantes.clear();
@@ -289,8 +297,6 @@ public class ManagerController implements Initializable {
         llenarTablaDatosRestaurantes();
     }
 
-
-
     //editar restaurante directamente de la tabla
     @FXML
     void editarRestaurante(MouseEvent event) {
@@ -373,5 +379,20 @@ public class ManagerController implements Initializable {
     // cambiar el color de los botones al presionarlos
     private void changeButtonColor(Button boton, String hexBack, String hexText) {
         boton.setStyle("-fx-background-color: " + hexBack + "; -fx-text-fill: " + hexText + ";");
+    }
+
+    @FXML
+    void cerrarPrograma(MouseEvent event){
+        Stage stage = (Stage) cerrar.getScene().getWindow();
+        stage.close();
+    }
+    @FXML
+    void minimizarPrograma(MouseEvent event){
+        Stage stage = (Stage) minimizar.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    @FXML
+    void cerrarSesion(MouseEvent event){
     }
 }

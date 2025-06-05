@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@restaurante-pane-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerController">
    <children>
-      <TableView fx:id="tablaRestaurantes" layoutX="14.0" layoutY="284.0" prefHeight="288.0" prefWidth="702.0">
+      <TableView fx:id="tablaRestaurantes" layoutX="14.0" layoutY="298.0" prefHeight="244.0" prefWidth="702.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="62.0" text="ID" />
           <TableColumn fx:id="nombre" prefWidth="105.0" text="Nombre" />
@@ -19,9 +19,9 @@
             <TableColumn fx:id="activo" prefWidth="102.0" text="Activo" />
         </columns>
       </TableView>
-      <Label fx:id="estadisticas_label" layoutX="54.0" layoutY="28.0" text="Estadisticas" />
-      <Label fx:id="restaurantes_label" layoutX="50.0" layoutY="249.0" text="Restaurantes en UdlaPark" />
-      <Pane layoutX="46.0" layoutY="73.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
+      <Label fx:id="estadisticas_label" layoutX="54.0" layoutY="60.0" text="Estadisticas" />
+      <Label fx:id="restaurantes_label" layoutX="50.0" layoutY="263.0" text="Restaurantes en UdlaPark" />
+      <Pane layoutX="46.0" layoutY="105.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
          <effect>
             <DropShadow />
          </effect>
@@ -29,7 +29,7 @@
             <Label fx:id="comisiones" layoutX="8.0" layoutY="23.0" text="Ingresos por Comisión" textFill="WHITE" />
          </children>
       </Pane>
-      <Pane layoutX="272.0" layoutY="73.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
+      <Pane layoutX="272.0" layoutY="105.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
          <effect>
             <DropShadow />
          </effect>
@@ -37,7 +37,7 @@
             <Label fx:id="ventas" layoutX="22.0" layoutY="22.0" text="Número de ventas" textFill="WHITE" />
          </children>
       </Pane>
-      <Pane layoutX="497.0" layoutY="73.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
+      <Pane layoutX="497.0" layoutY="105.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
          <effect>
             <DropShadow />
          </effect>
@@ -45,9 +45,9 @@
             <Label fx:id="numusuarios" layoutX="27.0" layoutY="23.0" text="Total de usuarios" textFill="WHITE" />
          </children>
       </Pane>
-      <Button fx:id="agregarButton" layoutX="582.0" layoutY="253.0" mnemonicParsing="false" onMouseClicked="#agregarRestaurante" text="✚" />
-      <Button fx:id="eliminarButton" layoutX="624.0" layoutY="253.0" mnemonicParsing="false" onMouseClicked="#eliminarRestaurante" text="➖" />
-      <Button fx:id="editarButton" layoutX="663.0" layoutY="253.0" mnemonicParsing="false" onMouseClicked="#editarRestaurante" text="🔧" />
-      <Button fx:id="guardarCambios" layoutX="448.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#refreshDB" text="💾 Guardar cambios" visible="false"/>
+      <Button fx:id="agregarButton" layoutX="582.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#agregarRestaurante" text="✚" />
+      <Button fx:id="eliminarButton" layoutX="624.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#eliminarRestaurante" text="➖" />
+      <Button fx:id="editarButton" layoutX="663.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#editarRestaurante" text="🔧" />
+      <Button fx:id="guardarCambios" layoutX="448.0" layoutY="266.0" mnemonicParsing="false" onMouseClicked="#refreshDB" text="💾 Guardar cambios" visible="false" />
    </children>
 </AnchorPane>

@@ -1,0 +1,18 @@
+.barraSuperior {
+    -fx-background-color: #9A3131;
+    -fx-padding: 5px;
+}
+
+.label-animado {
+    -fx-opacity: 0;
+    -fx-translate-y: 10px;
+    -fx-transition: all 0.5s ease-in-out;
+}
+
+.label-animado-activo {
+    -fx-opacity: 1;
+    -fx-translate-y: 0;
+}
+
+
+
