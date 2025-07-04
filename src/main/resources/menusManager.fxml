@@ -9,12 +9,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenusManagerController">
@@ -23,8 +19,8 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="619.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@menu-pane-style.css">
                <children>
-                  <Label fx:id="labelRestaurante" layoutX="46.0" layoutY="14.0" styleClass="labelRestaurante" text="Restaurante" />
-                  <ComboBox fx:id="comboRestaurantes" layoutX="45.0" layoutY="49.0" prefHeight="40.0" prefWidth="639.0" />
+                  <Label fx:id="labelRestaurante" layoutX="366.0" layoutY="14.0" styleClass="labelRestaurante" text="Restaurante" />
+                  <ComboBox fx:id="comboRestaurantes" layoutX="365.0" layoutY="49.0" prefHeight="40.0" prefWidth="313.0" />
                   <TabPane fx:id="tabPaneMenus" layoutX="47.0" layoutY="106.0" prefHeight="401.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab closable="false" text="Desayuno">
@@ -81,70 +77,12 @@
                               <Font size="15.0" />
                            </font>
                         </TextField>
-                        <ScrollPane fx:id="platos" layoutX="25.0" layoutY="56.0" prefHeight="270.0" prefWidth="307.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="312.0">
-                                 <children>
-                                    <Pane layoutX="151.0" layoutY="14.0" prefHeight="119.0" prefWidth="127.0" style="-fx-background-radius: 20; -fx-background-color: white;">
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.2328244298696518" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                       <children>
-                                          <Label layoutX="14.0" layoutY="73.0" prefHeight="17.0" prefWidth="105.0" text="Tortilla de huevo" textAlignment="CENTER">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                          <ImageView fitHeight="68.0" fitWidth="61.0" layoutX="33.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@tortilla%20de%20huevo.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label layoutX="41.0" layoutY="90.0" prefHeight="17.0" prefWidth="45.0" text="0.5 USD" textAlignment="CENTER">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="8.0" layoutY="14.0" prefHeight="119.0" prefWidth="127.0" style="-fx-background-radius: 20; -fx-background-color: white;">
-                                       <effect>
-                                          <DropShadow>
-                                             <color>
-                                                <Color opacity="0.2328244298696518" />
-                                             </color>
-                                          </DropShadow>
-                                       </effect>
-                                       <children>
-                                          <ImageView fitHeight="59.0" fitWidth="85.0" layoutX="23.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@tigrillo.jpeg" />
-                                             </image>
-                                          </ImageView>
-                                          <Label layoutX="43.0" layoutY="73.0" prefHeight="17.0" prefWidth="42.0" text="Tigrillo" textAlignment="CENTER">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="40.0" layoutY="91.0" prefHeight="17.0" prefWidth="45.0" text="1.5 USD" textAlignment="CENTER">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </ScrollPane>
                         <Button fx:id="eliminarButton" layoutX="198.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: c23939;" text="➖" textFill="WHITE" />
                         <Button fx:id="editarButton" layoutX="237.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: c23939;" text="🔧" textFill="WHITE" />
                      </children>
                   </AnchorPane>
+                  <Label fx:id="labelRestaurante1" layoutX="48.0" layoutY="14.0" styleClass="labelRestaurante" text="Campus" />
+                  <ComboBox fx:id="comboCampus" layoutX="47.0" layoutY="49.0" prefHeight="40.0" prefWidth="313.0" />
                </children>
             </AnchorPane>
         </content>

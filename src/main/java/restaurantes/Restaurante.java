@@ -26,7 +26,7 @@ public class Restaurante{
 
 
     //constructor
-    public Restaurante(String horario, String ubicacion, String nombre, String idRestaurante, boolean activo) {
+    public Restaurante(String idRestaurante, String nombre, String ubicacion, String horario, boolean activo) {
         this.horario = horario;
         this.ubicacion = ubicacion;
         this.nombre = nombre;

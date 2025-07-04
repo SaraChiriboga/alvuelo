@@ -17,6 +17,8 @@ import java.util.ResourceBundle;
 public class MenusManagerController implements Initializable {
     @FXML
     private ComboBox<String> comboRestaurantes;
+    @FXML
+    private ComboBox<?> comboCampus;
 
     @FXML
     private TextField nombre;

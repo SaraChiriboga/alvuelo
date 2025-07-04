@@ -42,7 +42,7 @@
                </font>
             </Label>
             <Separator layoutX="19.0" layoutY="197.0" prefHeight="4.0" prefWidth="134.0" />
-            <Button fx:id="salirSesion" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="534.0" mnemonicParsing="false" onMouseClicked="#cerrarSesion" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #9A3131; -fx-border-radius: 30; -fx-background-radius: 30;" text="🚪 Salir" textFill="WHITE">
+            <Button fx:id="salirSesion" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="534.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #9A3131; -fx-border-radius: 30; -fx-background-radius: 30;" text="🚪 Salir" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>

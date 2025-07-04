@@ -116,34 +116,6 @@
     -fx-text-fill: white;
 }
 
-.scroll-pane {
-    -fx-background-color: transparent; /* Fondo transparente */
-}
-
-.scroll-pane .viewport {
-    -fx-background-color: white; /* Fondo del contenido */
-}
-
-.scroll-bar {
-    -fx-background-color: transparent; /* Oculta el fondo del scrollbar */
-}
-
-.scroll-bar:horizontal, .scroll-bar:vertical {
-    -fx-background-color: transparent; /* Hace el fondo invisible */
-}
-
-.thumb {
-    -fx-background-color: #cdcdcd; /* Color de la barra de desplazamiento */
-    -fx-background-radius: 5px; /* Bordes redondeados */
-}
-
-.thumb:hover {
-    -fx-background-color: #888888; /* Color cuando el mouse pasa sobre la barra */
-}
-
-.increment-button, .decrement-button {
-    -fx-background-color: transparent; /* Oculta las flechas */
-}
 
 
 
