@@ -10,82 +10,99 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenusManagerController">
+<AnchorPane prefHeight="593.0" prefWidth="735.0" style="-fx-background-color: FFE1CD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenusManagerController">
    <children>
-      <ScrollPane layoutY="44.0" prefHeight="554.0" prefWidth="729.0" stylesheets="@menu-pane-style.css">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="619.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@menu-pane-style.css">
+      <AnchorPane layoutX="2.0" layoutY="45.0" minHeight="0.0" minWidth="0.0" prefHeight="547.0" prefWidth="730.0" style="-fx-background-color: FFE1CD;" stylesheets="@menu-pane-style.css">
+         <children>
+            <Label fx:id="labelRestaurante" layoutX="366.0" layoutY="14.0" styleClass="labelRestaurante" text="Restaurante" />
+            <ComboBox fx:id="comboRestaurantes" layoutX="365.0" layoutY="49.0" onAction="#showMenu" onInputMethodTextChanged="#search" prefHeight="40.0" prefWidth="313.0" promptText="Seleccionar" />
+            <TabPane fx:id="tabPaneMenus" layoutX="47.0" layoutY="106.0" onMouseClicked="#showMenu" prefHeight="401.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab closable="false" text="Desayuno">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: WHITE;" />
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Almuerzo">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Merienda">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Snacks">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Bebidas">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="329.0" prefWidth="602.0" style="-fx-background-color: white;" />
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <AnchorPane layoutX="52.0" layoutY="162.0" prefHeight="355.0" prefWidth="626.0">
                <children>
-                  <Label fx:id="labelRestaurante" layoutX="366.0" layoutY="14.0" styleClass="labelRestaurante" text="Restaurante" />
-                  <ComboBox fx:id="comboRestaurantes" layoutX="365.0" layoutY="49.0" prefHeight="40.0" prefWidth="313.0" />
-                  <TabPane fx:id="tabPaneMenus" layoutX="47.0" layoutY="106.0" prefHeight="401.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
-                    <tabs>
-                      <Tab closable="false" text="Desayuno">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: WHITE;" />
-                        </content>
-                      </Tab>
-                      <Tab closable="false" text="Almuerzo">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;" />
-                        </content>
-                      </Tab>
-                        <Tab closable="false" text="Merienda">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;" />
-                          </content>
-                        </Tab>
-                        <Tab closable="false" text="Snacks">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;" />
-                          </content>
-                        </Tab>
-                        <Tab closable="false" text="Bebidas">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="329.0" prefWidth="602.0" style="-fx-background-color: white;" />
-                          </content>
-                        </Tab>
-                    </tabs>
-                  </TabPane>
-                  <AnchorPane layoutX="52.0" layoutY="162.0" prefHeight="355.0" prefWidth="626.0">
+                  <Pane layoutX="361.0" layoutY="12.0" prefHeight="315.0" prefWidth="251.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;">
                      <children>
-                        <Pane layoutX="361.0" layoutY="12.0" prefHeight="315.0" prefWidth="251.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;">
-                           <children>
-                              <Label layoutX="25.0" layoutY="11.0" styleClass="labelPlato" text="Plato" />
-                              <TextField fx:id="nombre" layoutX="22.0" layoutY="67.0" prefHeight="25.0" prefWidth="206.0" />
-                              <Label layoutX="25.0" layoutY="46.0" prefHeight="17.0" prefWidth="45.0" text="Nombre" />
-                              <TextField fx:id="ingredientes" layoutX="24.0" layoutY="117.0" prefHeight="25.0" prefWidth="206.0" />
-                              <Label layoutX="27.0" layoutY="97.0" prefHeight="17.0" prefWidth="79.0" text="Ingredientes" />
-                              <TextField fx:id="precio" layoutX="24.0" layoutY="175.0" prefHeight="25.0" prefWidth="206.0" />
-                              <Label layoutX="27.0" layoutY="154.0" prefHeight="17.0" prefWidth="79.0" text="Precio" />
-                              <TextField fx:id="id" layoutX="24.0" layoutY="229.0" prefHeight="25.0" prefWidth="98.0" />
-                              <Label layoutX="27.0" layoutY="208.0" prefHeight="17.0" prefWidth="79.0" text="ID" />
-                              <ToggleButton fx:id="estadoToggle" layoutX="131.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#alternarEstado" prefHeight="29.0" prefWidth="99.0" styleClass="estado-switch" text="Disponible" />
-                              <Button layoutX="22.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#addPlato" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: c23939;" text="Agregar" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </Pane>
-                        <Separator layoutX="351.0" layoutY="12.0" orientation="VERTICAL" prefHeight="314.0" prefWidth="10.0" />
-                        <TextField layoutX="25.0" layoutY="14.0" prefHeight="25.0" prefWidth="160.0" promptText="🔍 Buscar">
+                        <Label layoutX="25.0" layoutY="11.0" styleClass="labelPlato" text="Plato" />
+                        <TextField fx:id="nombre" layoutX="22.0" layoutY="67.0" prefHeight="25.0" prefWidth="206.0" />
+                        <Label layoutX="25.0" layoutY="46.0" prefHeight="17.0" prefWidth="45.0" text="Nombre" />
+                        <TextField fx:id="ingredientes" layoutX="24.0" layoutY="117.0" prefHeight="25.0" prefWidth="206.0" />
+                        <Label layoutX="27.0" layoutY="97.0" prefHeight="17.0" prefWidth="79.0" text="Ingredientes" />
+                        <TextField fx:id="precio" layoutX="24.0" layoutY="175.0" prefHeight="25.0" prefWidth="206.0" />
+                        <Label layoutX="27.0" layoutY="154.0" prefHeight="17.0" prefWidth="79.0" text="Precio" />
+                        <TextField fx:id="id" layoutX="24.0" layoutY="229.0" prefHeight="25.0" prefWidth="98.0" />
+                        <Label layoutX="27.0" layoutY="208.0" prefHeight="17.0" prefWidth="79.0" text="ID" />
+                        <ToggleButton fx:id="estadoToggle" layoutX="131.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#alternarEstado" prefHeight="29.0" prefWidth="99.0" styleClass="estado-switch" text="Disponible" />
+                        <Button fx:id="addButton" layoutX="22.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#addPlato" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: c23939;" text="Agregar" textFill="WHITE">
                            <font>
-                              <Font size="15.0" />
+                              <Font name="System Bold" size="12.0" />
                            </font>
-                        </TextField>
-                        <Button fx:id="eliminarButton" layoutX="198.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: c23939;" text="➖" textFill="WHITE" />
-                        <Button fx:id="editarButton" layoutX="237.0" layoutY="17.0" mnemonicParsing="false" style="-fx-background-color: c23939;" text="🔧" textFill="WHITE" />
+                        </Button>
                      </children>
-                  </AnchorPane>
-                  <Label fx:id="labelRestaurante1" layoutX="48.0" layoutY="14.0" styleClass="labelRestaurante" text="Campus" />
-                  <ComboBox fx:id="comboCampus" layoutX="47.0" layoutY="49.0" prefHeight="40.0" prefWidth="313.0" />
+                  </Pane>
+                  <Separator layoutX="351.0" layoutY="12.0" orientation="VERTICAL" prefHeight="314.0" prefWidth="10.0" />
+                  <TextField fx:id="barraBusqueda" layoutX="25.0" layoutY="14.0" onAction="#search" prefHeight="25.0" prefWidth="160.0" promptText="🔍 Buscar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="eliminarButton" layoutX="198.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#deletePlato" style="-fx-background-color: c23939;" text="➖" textFill="WHITE" />
+                  <Button fx:id="editarButton" layoutX="237.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#editPlato" style="-fx-background-color: c23939;" text="🔧" textFill="WHITE" />
+                  <ScrollPane layoutX="25.0" layoutY="60.0" prefHeight="262.0" prefWidth="315.0" style="-fx-background-color: WHITE;">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="318.0" style="-fx-background-color: WHITE;">
+                           <children>
+                              <GridPane fx:id="gridPlatos" alignment="CENTER" layoutX="5.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="222.0" prefWidth="288.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.2" minWidth="10.0" prefWidth="143.2" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.5999755859375" minWidth="10.0" prefWidth="145.59999999999997" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="147.2" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
-        </content>
-      </ScrollPane>
+            <Label fx:id="labelRestaurante1" layoutX="48.0" layoutY="14.0" styleClass="labelRestaurante" text="Campus" />
+            <ComboBox fx:id="comboCampus" layoutX="47.0" layoutY="49.0" onAction="#desplegarRestaurantesPorCampus" prefHeight="40.0" prefWidth="313.0" promptText="Seleccionar" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

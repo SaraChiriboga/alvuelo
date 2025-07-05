@@ -299,11 +299,12 @@ public class RestaurantesManagerController {
         if (!listaRestaurantes.isEmpty()) {
             alvuelo.setAutoCommit(false);
             boolean cambiosRealizados = false;
+            String campusSeleccionado = comboCampus.getValue(); // Obtener el campus seleccionado
 
             try {
                 String checkExistSQL = "SELECT COUNT(*) FROM alvuelo_db.restaurantes WHERE idrestaurante = ?";
-                String updateSQL = "UPDATE alvuelo_db.restaurantes SET nombre = ?, ubicacion = ?, horario = ?, activo = ? WHERE idrestaurante = ?";
-                String insertSQL = "INSERT INTO alvuelo_db.restaurantes (idrestaurante, nombre, ubicacion, horario, activo) VALUES (?, ?, ?, ?, ?)";
+                String updateSQL = "UPDATE alvuelo_db.restaurantes SET nombre = ?, ubicacion = ?, horario = ?, activo = ?, campus = ? WHERE idrestaurante = ?";
+                String insertSQL = "INSERT INTO alvuelo_db.restaurantes (idrestaurante, nombre, ubicacion, horario, activo, campus) VALUES (?, ?, ?, ?, ?, ?)";
 
                 try (PreparedStatement checkStmt = alvuelo.prepareStatement(checkExistSQL);
                      PreparedStatement updateStmt = alvuelo.prepareStatement(updateSQL);
@@ -325,7 +326,8 @@ public class RestaurantesManagerController {
                                 updateStmt.setString(2, restaurante.getUbicacion());
                                 updateStmt.setString(3, restaurante.getHorario());
                                 updateStmt.setBoolean(4, restaurante.isActivo());
-                                updateStmt.setString(5, restaurante.getIdRestaurante());
+                                updateStmt.setString(5, campusSeleccionado); // Añadir campus
+                                updateStmt.setString(6, restaurante.getIdRestaurante());
                                 updateStmt.executeUpdate();
                             } else {
                                 insertStmt.setString(1, restaurante.getIdRestaurante());
@@ -333,6 +335,7 @@ public class RestaurantesManagerController {
                                 insertStmt.setString(3, restaurante.getUbicacion());
                                 insertStmt.setString(4, restaurante.getHorario());
                                 insertStmt.setBoolean(5, restaurante.isActivo());
+                                insertStmt.setString(6, campusSeleccionado); // Añadir campus
                                 insertStmt.executeUpdate();
                             }
 
