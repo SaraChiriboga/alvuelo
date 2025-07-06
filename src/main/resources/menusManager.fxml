@@ -9,6 +9,8 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -70,6 +72,11 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
+                        <ImageView fx:id="addImagen" fitHeight="31.0" fitWidth="35.0" layoutX="196.0" layoutY="13.0" onMouseClicked="#agregarImagenPlato" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@photo-gallery.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <Separator layoutX="351.0" layoutY="12.0" orientation="VERTICAL" prefHeight="314.0" prefWidth="10.0" />

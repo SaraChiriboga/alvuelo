@@ -519,6 +519,4 @@ public class UsersManagerController {
             alert.showAndWait();
         }
     }
-
-
 }

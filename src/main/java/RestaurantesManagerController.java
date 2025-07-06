@@ -424,9 +424,6 @@ public class RestaurantesManagerController {
                     checkBox.setSelected(item);
                     setGraphic(checkBox);
                     setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-
-                    // Solo permitir edición en la última fila
-                    checkBox.setDisable(getIndex() != listaRestaurantes.size() - 1);
                 }
             }
         });

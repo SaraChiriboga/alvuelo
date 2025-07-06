@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -17,16 +18,17 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.swing.*;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MenusManagerController implements Initializable {
@@ -34,8 +36,9 @@ public class MenusManagerController implements Initializable {
     private ComboBox<String> comboRestaurantes;
     @FXML
     private ComboBox<String> comboCampus;
-    @FXML
-    private Button eliminarButton;
+
+    private File imagenPlato;
+
     @FXML
     private TextField nombre;
     @FXML
@@ -79,25 +82,35 @@ public class MenusManagerController implements Initializable {
         });
     }
 
-    public void addPlato(javafx.scene.input.MouseEvent mouseEvent) throws SQLException {
-        String query = "INSERT INTO alvuelo_db.platos (id, nombre, ingredientes, precio, disponibilidad, restaurante, campus, categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement insertStmt = alvuelo.prepareStatement(query);
+    public void addPlato(javafx.scene.input.MouseEvent mouseEvent) throws SQLException, IOException {
+        String query = "INSERT INTO alvuelo_db.platos (id, nombre, ingredientes, precio, disponibilidad, restaurante, campus, categoria, imagenPlato) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        insertStmt.setInt(1, Integer.parseInt(id.getText()));
-        insertStmt.setString(2, nombre.getText());
-        insertStmt.setString(3, ingredientes.getText());
-        insertStmt.setDouble(4, Double.parseDouble(precio.getText()));
-        boolean estado = estadoToggle.isSelected();
-        insertStmt.setBoolean(5, !estado);
-        insertStmt.setString(6, (String) comboRestaurantes.getSelectionModel().getSelectedItem());
-        insertStmt.setString(7, (String) comboCampus.getSelectionModel().getSelectedItem()); //nuevos campus agregados
-        insertStmt.setString(8, String.valueOf(tabPaneMenus.getSelectionModel().getSelectedItem().getText()));
-        insertStmt.executeUpdate();
+        try (PreparedStatement insertStmt = alvuelo.prepareStatement(query)) {
+            insertStmt.setInt(1, Integer.parseInt(id.getText()));
+            insertStmt.setString(2, nombre.getText());
+            insertStmt.setString(3, ingredientes.getText());
+            insertStmt.setDouble(4, Double.parseDouble(precio.getText()));
+            boolean estado = estadoToggle.isSelected();
+            insertStmt.setBoolean(5, !estado);
+            insertStmt.setString(6, (String) comboRestaurantes.getSelectionModel().getSelectedItem());
+            insertStmt.setString(7, (String) comboCampus.getSelectionModel().getSelectedItem());
+            insertStmt.setString(8, String.valueOf(tabPaneMenus.getSelectionModel().getSelectedItem().getText()));
 
-        clearCampos();
-        listPlatos(comboCampus.getSelectionModel().getSelectedItem(),
-                comboRestaurantes.getSelectionModel().getSelectedItem(),
-                tabPaneMenus.getSelectionModel().getSelectedItem().getText()); //actualización inmediata
+            // ingreso de la imagen del plato
+            if (imagenPlato != null) {
+                FileInputStream fis = new FileInputStream(imagenPlato);
+                insertStmt.setBinaryStream(9, fis, (int) imagenPlato.length());
+            } else {
+                insertStmt.setNull(9, java.sql.Types.BLOB);
+            }
+
+            insertStmt.executeUpdate();
+
+            clearCampos();
+            listPlatos(comboCampus.getSelectionModel().getSelectedItem(),
+                    comboRestaurantes.getSelectionModel().getSelectedItem(),
+                    tabPaneMenus.getSelectionModel().getSelectedItem().getText());
+        }
     }
 
     public void listPlatos(String campus, String restaurante, String menu) throws SQLException {
@@ -336,5 +349,21 @@ public class MenusManagerController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void agregarImagenPlato(MouseEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Insertar imagen del plato");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
+        );
+        File file = fileChooser.showOpenDialog(((Node) event.getSource()).getScene().getWindow());
+        if (file != null) {
+            JOptionPane.showMessageDialog(null, "Imagen seleccionada: " + file.getAbsolutePath());
+        } else {
+            JOptionPane.showMessageDialog(null, "No se seleccionó ningún archivo.");
+        }
+
+        imagenPlato = file; // Guardar la imagen seleccionada
     }
 }
