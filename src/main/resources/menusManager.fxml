@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -108,7 +109,10 @@
                </children>
             </AnchorPane>
             <Label fx:id="labelRestaurante1" layoutX="48.0" layoutY="14.0" styleClass="labelRestaurante" text="Campus" />
-            <ComboBox fx:id="comboCampus" layoutX="47.0" layoutY="49.0" onAction="#desplegarRestaurantesPorCampus" prefHeight="40.0" prefWidth="313.0" promptText="Seleccionar" />
+            <ComboBox fx:id="comboCampus" layoutX="47.0" layoutY="49.0" onAction="#desplegarRestaurantesPorCampus" prefHeight="40.0" prefWidth="313.0" promptText="Seleccionar">
+               <effect>
+                  <Reflection />
+               </effect></ComboBox>
          </children>
       </AnchorPane>
    </children>

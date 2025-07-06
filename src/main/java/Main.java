@@ -15,9 +15,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("manager.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("mainPageUser.fxml"));
         stage.setTitle("Al Vuelo Manager");
-        stage.setScene(new Scene(root,900, 600));
+        stage.setScene(new Scene(root,375, 812));
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }

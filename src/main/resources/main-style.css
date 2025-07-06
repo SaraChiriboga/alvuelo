@@ -1,0 +1,72 @@
+#comboCampus, #labelBienvenida{
+    -fx-background-color: transparent;
+    -fx-font-family: 'Poppins ExtraBold', 'Poppins', sans-serif;
+    -fx-font-size: 20px;
+}
+
+.labelH1{
+    -fx-font-family: 'Poppins', 'Poppins', sans-serif;
+    -fx-font-size: 15px;
+}
+
+#searchBar{
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+    -fx-font-family: 'Poppins', 'Poppins', sans-serif;
+    -fx-font-size: 15px;
+}
+
+#bar{
+    -fx-background-radius: 30px;
+}
+
+#comboServicio{
+    -fx-background-color: transparent;
+    -fx-border-color: GREY;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+    -fx-font-family: 'Poppins', 'Poppins', sans-serif;
+    -fx-font-size: 15px;
+}
+
+/* Estilo para hacer las barras de scroll invisibles */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Estilo para la barra vertical */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+
+/* Estilo para la barra horizontal */
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+
+/* Estilo para el thumb (la parte móvil de la barra) */
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: transparent;
+    -fx-opacity: 0;
+}
+
+/* Estilo para los botones de incremento/decremento */
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+/* Estilo para la esquina entre barras */
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
