@@ -47,8 +47,6 @@ public class MenusManagerController implements Initializable {
     @FXML
     private ToggleButton estadoToggle;
     @FXML
-    private Label labelRestaurante;
-    @FXML
     private GridPane gridPlatos;
     @FXML
     private TabPane tabPaneMenus;
@@ -76,6 +74,9 @@ public class MenusManagerController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        barraBusqueda.textProperty().addListener((obs, oldVal, newVal) -> {
+            search(null);
+        });
     }
 
     public void addPlato(javafx.scene.input.MouseEvent mouseEvent) throws SQLException {
@@ -232,8 +233,13 @@ public class MenusManagerController implements Initializable {
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.showAndWait();
+            listPlatos(comboCampus.getSelectionModel().getSelectedItem(),
+                    comboRestaurantes.getSelectionModel().getSelectedItem(),
+                    tabPaneMenus.getSelectionModel().getSelectedItem().getText()); //actualización inmediata);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -249,8 +255,13 @@ public class MenusManagerController implements Initializable {
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.showAndWait();
+            listPlatos(comboCampus.getSelectionModel().getSelectedItem(),
+                    comboRestaurantes.getSelectionModel().getSelectedItem(),
+                    tabPaneMenus.getSelectionModel().getSelectedItem().getText()); //actualización inmediata);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

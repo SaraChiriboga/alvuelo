@@ -115,5 +115,6 @@ public class FormController {
         } catch (SQLException e) {
             labelAviso.setText("Error al actualizar el registro: " + e.getMessage());
         }
+
     }
 }

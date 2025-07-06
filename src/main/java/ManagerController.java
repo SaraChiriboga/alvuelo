@@ -70,13 +70,24 @@ public class ManagerController implements Initializable {
     }
 
     @FXML
-    void mostrarUsuarios(MouseEvent event) {
+    void mostrarUsuarios(MouseEvent event) throws IOException {
+        // Cargar el FXML dashboard de usuarios
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("usersManager.fxml"));
+        Parent fxml = null;
+        try {
+            fxml = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Limpiar y mostrar el nuevo contenido
+        stackContentArea.getChildren().clear();
+        stackContentArea.getChildren().add(fxml);
+        // Cambiar colores de botones
         changeButtonColor(usuarios, "#c23939", "WHITE");
         changeButtonColor(restaurantes, "#CB5353", "WHITE");
         changeButtonColor(menus, "#CB5353", "WHITE");
-        // Aquí cargarías la vista de usuarios si es necesario
     }
-
 
     //========================//
     //        EXTRAS          //

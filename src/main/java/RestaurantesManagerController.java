@@ -66,6 +66,8 @@ public class RestaurantesManagerController {
     @FXML
     public void initialize() {
         comboCampus.getItems().addAll("UdlaPark", "Granados", "Colón"); // Agrega los campus disponibles al ComboBox
+        comboCampus.getSelectionModel().selectFirst(); // Selecciona el primer campus por defecto
+        llenarTabla(comboCampus.getSelectionModel().getSelectedItem());
         // configurar las columnas solo una vez
         id.setCellValueFactory(new PropertyValueFactory<>("idRestaurante"));
         nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -147,7 +149,7 @@ public class RestaurantesManagerController {
     // metodo para agregar un nuevo restaurante
     public void addRestaurante(MouseEvent event) {
         // Crear un nuevo restaurante con valores predeterminados
-        Restaurante extra = new Restaurante("", "", "", "", false);
+        Restaurante extra = new Restaurante("xxxx", "Nuevo", "Ubicacion", "", false);
         extra.setNuevo(true); // Marca como nuevo
         listaRestaurantes.add(extra);
         tablaRestaurantes.setItems(listaRestaurantes);

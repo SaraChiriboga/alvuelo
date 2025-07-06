@@ -5,6 +5,13 @@
     -fx-text-fill: #000000;
 }
 
+.userLabels{
+    -fx-font-family: 'Poppins ExtraBold', 'Poppins', sans-serif;
+    -fx-font-weight: 800; /* ExtraBold */
+    -fx-font-size: 24px;
+    -fx-text-fill: #000000;
+}
+
 #agregarButton, #eliminarButton, #editarButton{
     -fx-background-color: #c23939;
     -fx-border-color: transparent;
@@ -162,4 +169,12 @@
     -fx-border-width: 1;
     -fx-border-radius: 0 0 8 8;
     -fx-background-radius: 0 0 8 8;
+}
+
+
+.manageButtons{
+    -fx-background-color: #c23939;
+    -fx-text-fill: white;
+    -fx-font-family: "Poppins", sans-serif;
+    -fx-font-size: 15px;
 }
