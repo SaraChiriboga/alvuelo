@@ -91,8 +91,8 @@ public class MainPageUserController implements Initializable {
         while (rs.next()) {
             boolean abierto = rs.getBoolean("activo");
             if (abierto) {
-                // Extract idrestaurante before closing ResultSet
-                String restauranteId = rs.getString("idrestaurante");
+                String campus = rs.getString("campus");
+                String nombre = rs.getString("nombre");
 
                 AnchorPane card = new AnchorPane();
                 card.setPrefSize(290, 115);
@@ -135,7 +135,7 @@ public class MainPageUserController implements Initializable {
                 } catch (SQLException | IOException e) {
                     System.err.println("Error al cargar imagen: " + e.getMessage());
                     Image defaultImage = new Image(
-                            getClass().getResourceAsStream("/images/photo-gallery.png"),
+                            getClass().getResourceAsStream("photo-gallery.png"),
                             103, 97, true, true
                     );
                     imagen.setImage(defaultImage);
@@ -191,7 +191,11 @@ public class MainPageUserController implements Initializable {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("menuRestaurante.fxml"));
                         Parent fxml = loader.load();
                         MenuRestauranteController controller = loader.getController();
-                        controller.setRestauranteId(restauranteId);
+                        controller.setNombreRestaurante(nombre);
+                        controller.setCampus(campus);
+                        controller.loadLogo(nombre);
+                        controller.loadInfo(nombre);
+                        controller.loadMenus();
 
                         stackContentArea.getChildren().clear();
                         stackContentArea.getChildren().add(fxml);
@@ -199,6 +203,8 @@ public class MainPageUserController implements Initializable {
                     } catch (IOException ex) {
                         System.err.println("Error al cargar menuRestaurante.fxml: " + ex.getMessage());
                         ex.printStackTrace();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
                     }
                 });
             }
@@ -207,7 +213,5 @@ public class MainPageUserController implements Initializable {
         statement.close();
         rs.close();
     }
-
-
 }
 

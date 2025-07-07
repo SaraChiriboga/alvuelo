@@ -1,28 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
 
-<StackPane fx:id="stackContentArea" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuRestauranteController">
+<StackPane fx:id="stackContentArea" alignment="TOP_CENTER" maxHeight="812.0" maxWidth="375.0" minHeight="812.0" minWidth="375.0" prefHeight="812.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuRestauranteController">
    <children>
-      <AnchorPane prefHeight="812.0" prefWidth="375.0" style="-fx-background-image: url('/bckgrnd.png');">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <children>
-            <HBox fx:id="bar" alignment="CENTER" layoutX="30.0" layoutY="720.0" prefHeight="61.0" prefWidth="316.0" spacing="40.0" style="-fx-background-color: c23939;" stylesheets="@main-style.css">
+      <ScrollPane fx:id="pGeneral" stylesheets="@main-style.css">
+         <content>
+            <AnchorPane maxWidth="375.0" minWidth="375.0" prefHeight="1500.0" prefWidth="375.0" style="-fx-background-image: url('/bckgrnd.png');">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
                <children>
-                  <ImageView fx:id="homeButton" fitHeight="30.0" fitWidth="28.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true" smooth="false" style="-fx-opacity: 50;">
+                  <AnchorPane prefHeight="75.0" prefWidth="375.0" style="-fx-background-color: c23939;">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="28.0" layoutX="24.0" layoutY="24.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@arrow.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane fx:id="scrollMenus" layoutX="23.0" layoutY="243.0" prefHeight="116.0" prefWidth="330.0" stylesheets="@main-style.css">
+                     <content>
+                        <HBox fx:id="comboMenus" alignment="CENTER" prefHeight="100.0" prefWidth="409.0" spacing="15.0" stylesheets="@main-style.css">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fitHeight="69.0" fitWidth="74.0" onMouseClicked="#scrollToDesayunos" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@desayuno.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Desayunos" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fitHeight="69.0" fitWidth="74.0" onMouseClicked="#scrollToAlmuerzos" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@almuerzo.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Almuerzos" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fitHeight="69.0" fitWidth="74.0" onMouseClicked="#scrollToMeriendas" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@merienda.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Meriendas" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fitHeight="69.0" fitWidth="74.0" onMouseClicked="#scrollToSnacks" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@snacks.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Snacks" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fitHeight="69.0" fitWidth="74.0" onMouseClicked="#scrollToBebidas" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@bebidas.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Bebidas" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </ScrollPane>
+                  <VBox fx:id="listCompleta" layoutX="31.0" layoutY="372.0" prefHeight="783.0" prefWidth="330.0">
+                     <children>
+                        <VBox fx:id="listaDesayunos" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label styleClass="header1" stylesheets="@main-style.css" text="Desayunos" />
+                              <Separator prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="listaAlmuerzos" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label styleClass="header1" stylesheets="@main-style.css" text="Almuerzos" />
+                              <Separator prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="listaMeriendas" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label styleClass="header1" stylesheets="@main-style.css" text="Meriendas" />
+                              <Separator prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="listaSnacks" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label styleClass="header1" stylesheets="@main-style.css" text="Snacks" />
+                              <Separator prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="listaBebibas" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label styleClass="header1" stylesheets="@main-style.css" text="Bebidas" />
+                              <Separator prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <AnchorPane layoutX="137.0" layoutY="21.0" prefHeight="101.0" prefWidth="103.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fx:id="logo" fitHeight="84.0" fitWidth="92.0" layoutX="6.0" layoutY="9.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                  <VBox alignment="CENTER" layoutX="20.0" layoutY="122.0" prefHeight="69.0" prefWidth="336.0" stylesheets="@main-style.css">
+                     <children>
+                        <Label fx:id="nombre" styleClass="headerNombre" text="Nombre del restaurante" />
+                        <Label fx:id="ubi" alignment="CENTER" prefHeight="23.0" prefWidth="196.0" styleClass="info-restaurante" text="Ubicación" textAlignment="CENTER" wrapText="true" />
+                        <Label fx:id="horario" styleClass="info-restaurante" text="Horario" />
+                        <Label text="Precio de envío: $1.50" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane layoutX="30.0" layoutY="720.0" maxHeight="61.0" maxWidth="316.0" minHeight="61.0" minWidth="316.0" prefHeight="61.0" prefWidth="316.0" stylesheets="@main-style.css" translateY="720.0">
+         <children>
+            <HBox fx:id="bar" alignment="CENTER" prefHeight="61.0" prefWidth="316.0" spacing="40.0" style="-fx-background-color: c23939;">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="28.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true" smooth="false" style="-fx-opacity: 50;">
                      <image>
                         <Image url="@store.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView fitHeight="41.0" fitWidth="38.0" onMouseClicked="#goToCarrito" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@shoppingcar.png" />
                      </image>
@@ -34,7 +160,6 @@
                   </ImageView>
                </children>
             </HBox>
-            <AnchorPane prefHeight="142.0" prefWidth="375.0" style="-fx-background-color: c23939;" />
          </children>
       </AnchorPane>
    </children>

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<StackPane fx:id="stackContentArea" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPageUserController">
+<StackPane fx:id="stackContentArea" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPageUserController">
    <children>
       <AnchorPane prefHeight="812.0" prefWidth="375.0" style="-fx-background-image: url('/bckgrnd.png');" stylesheets="@main-style.css">
          <children>

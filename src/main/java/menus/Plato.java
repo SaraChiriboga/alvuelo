@@ -9,18 +9,27 @@ public class Plato {
     private boolean disponibilidad;
     private int idPlato;
 
-    //ACTUALIZAR DISPONIBILIDAD DE PLATO
-    public void actualizarDisponibilidad(int idPlato){
-
+    public String getNombre() {
+        return nombre;
     }
 
-    //OBTENER DETALLES
-    public void obtenerDetalles(int idPlato){
-
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    //EDITAR PLATO
-    public void editPlato(int idPlato){
+    public double getPrecio() {
+        return precio;
+    }
 
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getIdPlato() {
+        return idPlato;
+    }
+
+    public void setIdPlato(int idPlato) {
+        this.idPlato = idPlato;
     }
 }

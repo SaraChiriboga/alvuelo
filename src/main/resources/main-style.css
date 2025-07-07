@@ -70,3 +70,87 @@
 .scroll-pane .corner {
     -fx-background-color: transparent;
 }
+
+#scrollMenus .viewport{
+    -fx-background-color: transparent;
+}
+
+/* Estilo para la barra vertical */
+#scrollMenus .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+
+/* Estilo para la barra horizontal */
+#scrollMenus .scroll-bar:horizontal {
+    -fx-background-color: white;
+    -fx-opacity: 0.3;
+    -fx-pref-height: 10px;
+}
+
+/* Estilo para el thumb (la parte móvil de la barra) */
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: rgb(197, 197, 197);
+    -fx-opacity: 0.7;
+
+}
+
+.header1 {
+    -fx-font-family: 'Poppins ExtraBold', sans-serif;
+    -fx-font-size: 20px;
+}
+
+.quantity-btn {
+    -fx-background-color: #E0E0E0;
+    -fx-font-weight: bold;
+    -fx-min-width: 25;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+}
+
+.quantity-btn:hover {
+    -fx-background-color: #D0D0D0;
+}
+
+.quantity-label {
+    -fx-font-weight: bold;
+    -fx-min-width: 30;
+    -fx-alignment: center;
+    -fx-font-size: 12;
+}
+
+.add-to-cart-btn {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 3 15 3 15;
+    -fx-cursor: hand;
+}
+
+.add-to-cart-btn:hover {
+    -fx-background-color: #45a049;
+}
+
+.disabled-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #F44336;
+    -fx-text-fill: #F44336;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 3 15 3 15;
+    -fx-opacity: 0.7;
+}
+
+.info-restaurante{
+    -fx-font-family: 'Poppins', sans-serif;
+    -fx-font-size: 15px;
+}
+
+.headerNombre{
+    -fx-font-family: 'Poppins ExtraBold', sans-serif;
+    -fx-font-size: 30px;
+}

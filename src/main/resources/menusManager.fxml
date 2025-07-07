@@ -88,7 +88,7 @@
                   </TextField>
                   <Button fx:id="eliminarButton" layoutX="198.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#deletePlato" style="-fx-background-color: c23939;" text="➖" textFill="WHITE" />
                   <Button fx:id="editarButton" layoutX="237.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#editPlato" style="-fx-background-color: c23939;" text="🔧" textFill="WHITE" />
-                  <ScrollPane layoutX="25.0" layoutY="60.0" prefHeight="262.0" prefWidth="315.0" style="-fx-background-color: WHITE;">
+                  <ScrollPane hbarPolicy="NEVER" layoutX="25.0" layoutY="60.0" prefHeight="262.0" prefWidth="315.0" style="-fx-background-color: WHITE;">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="318.0" style="-fx-background-color: WHITE;">
                            <children>
