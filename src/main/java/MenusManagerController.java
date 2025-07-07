@@ -244,6 +244,7 @@ public class MenusManagerController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.setTitle("Eliminar Plato");
             stage.setScene(new Scene(root));
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setResizable(false);
             stage.showAndWait();
             listPlatos(comboCampus.getSelectionModel().getSelectedItem(),
@@ -266,6 +267,7 @@ public class MenusManagerController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.setTitle("Editar Plato");
             stage.setScene(new Scene(root));
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setResizable(false);
             stage.showAndWait();
             listPlatos(comboCampus.getSelectionModel().getSelectedItem(),

@@ -5,12 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="225.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormController">
+<AnchorPane prefHeight="197.0" prefWidth="389.0" stylesheets="@form-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormController">
    <children>
-      <Label layoutX="40.0" layoutY="55.0" text="Ingrese el ID del Plato" />
-      <TextField fx:id="idTextField" layoutX="40.0" layoutY="88.0" prefHeight="26.0" prefWidth="312.0" />
-      <Label fx:id="labelAviso" layoutX="40.0" layoutY="122.0" />
-      <Button layoutX="40.0" layoutY="146.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="26.0" prefWidth="312.0" text="Eliminar" />
-      <Button fx:id="cancelarButton" layoutX="26.0" layoutY="21.0" mnemonicParsing="false" text="✖" />
+      <Label fx:id="labelId" layoutX="36.0" layoutY="30.0" text="Ingrese el ID del Plato" />
+      <TextField fx:id="idTextField" layoutX="36.0" layoutY="63.0" prefHeight="26.0" prefWidth="312.0" />
+      <Label fx:id="labelAviso" layoutX="36.0" layoutY="107.0" />
+      <Button layoutX="36.0" layoutY="137.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="26.0" prefWidth="312.0" styleClass="altButton" text="Eliminar" />
+      <Button fx:id="cancelarButton" layoutX="302.0" layoutY="14.0" mnemonicParsing="false" styleClass="exitButton" text="✖" />
    </children>
 </AnchorPane>

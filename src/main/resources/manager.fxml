@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: FFE1CD;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: FFE1CD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerController">
    <children>
       <AnchorPane fx:id="sidebar" prefHeight="600.0" prefWidth="170.0" style="-fx-background-color: CB5353;">
          <children>
@@ -57,7 +57,7 @@
          </children>
       </AnchorPane>
       <StackPane fx:id="stackContentArea" layoutX="170.0" prefHeight="600.0" prefWidth="729.0" />
-      <Pane prefHeight="44.0" prefWidth="900.0" styleClass="barraSuperior">
+      <Pane prefHeight="44.0" prefWidth="900.0" style="-fx-background-color: #9A3131;">
          <children>
             <Label layoutX="14.0" layoutY="10.0" text="Al Vuelo Manager" textFill="WHITE">
                <font>

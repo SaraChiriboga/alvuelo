@@ -9,24 +9,28 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="457.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormController">
+<AnchorPane prefHeight="433.0" prefWidth="549.0" styleClass="gradient-anchor" stylesheets="@form-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FormController">
    <children>
-      <Label layoutX="28.0" layoutY="62.0" text="Ingrese el ID del Plato" />
-      <TextField fx:id="idTextField" layoutX="28.0" layoutY="95.0" prefHeight="26.0" prefWidth="473.0" />
-      <Label fx:id="labelAviso" layoutX="32.0" layoutY="129.0" />
-      <Button layoutX="28.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="26.0" prefWidth="473.0" text="Editar" />
-      <Button fx:id="cancelarButton" layoutX="18.0" layoutY="21.0" mnemonicParsing="false" text="✖" />
-      <Separator layoutX="28.0" layoutY="204.0" prefHeight="7.0" prefWidth="473.0" />
-      <Label layoutX="28.0" layoutY="215.0" text="Nombre" />
-      <TextField fx:id="nombre" layoutX="28.0" layoutY="237.0" prefHeight="26.0" prefWidth="288.0" />
-      <Label layoutX="28.0" layoutY="274.0" text="Ingredientes" />
-      <TextField fx:id="ingredientes" layoutX="28.0" layoutY="296.0" prefHeight="26.0" prefWidth="288.0" />
-      <Label layoutX="28.0" layoutY="337.0" text="Precio" />
-      <TextField fx:id="precio" layoutX="28.0" layoutY="359.0" prefHeight="26.0" prefWidth="288.0" />
-      <ToggleButton fx:id="estadoToggle" layoutX="28.0" layoutY="398.0" mnemonicParsing="false" onMouseClicked="#alternarEstado" prefHeight="29.0" prefWidth="288.0" styleClass="estado-switch" text="Disponible" />
-      <Button layoutX="343.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#sendCambios" prefHeight="26.0" prefWidth="172.0" text="Guardar Cambios" />
-      <ImageView fx:id="imagen" cache="true" fitHeight="179.0" fitWidth="172.0" layoutX="343.0" layoutY="215.0" onMouseClicked="#replaceImagenPlato" pickOnBounds="true" preserveRatio="true">
+      <Label fx:id="labelId" layoutX="33.0" layoutY="36.0" text="Ingrese el ID del Plato" />
+      <TextField fx:id="idTextField" layoutX="33.0" layoutY="69.0" prefHeight="26.0" prefWidth="473.0" styleClass="text-field" />
+      <Label fx:id="labelAviso" layoutX="33.0" layoutY="110.0" prefHeight="20.0" prefWidth="473.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button layoutX="33.0" layoutY="137.0" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="26.0" prefWidth="473.0" styleClass="altButton" text="Editar" />
+      <Button fx:id="cancelarButton" layoutX="477.0" layoutY="14.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="58.0" styleClass="exitButton" text="✖" />
+      <Separator layoutX="33.0" layoutY="178.0" prefHeight="7.0" prefWidth="473.0" />
+      <Label layoutX="33.0" layoutY="189.0" styleClass="labelForm" text="Nombre" />
+      <TextField fx:id="nombre" layoutX="33.0" layoutY="211.0" prefHeight="26.0" prefWidth="288.0" />
+      <Label layoutX="33.0" layoutY="248.0" styleClass="labelForm" text="Ingredientes" />
+      <TextField fx:id="ingredientes" layoutX="33.0" layoutY="270.0" prefHeight="26.0" prefWidth="288.0" />
+      <Label layoutX="33.0" layoutY="311.0" styleClass="labelForm" text="Precio" />
+      <TextField fx:id="precio" layoutX="33.0" layoutY="333.0" prefHeight="26.0" prefWidth="288.0" />
+      <ToggleButton fx:id="estadoToggle" layoutX="33.0" layoutY="384.0" mnemonicParsing="false" onMouseClicked="#alternarEstado" prefHeight="29.0" prefWidth="288.0" styleClass="estado-switch" text="Disponible" />
+      <Button layoutX="348.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#sendCambios" prefHeight="26.0" prefWidth="172.0" styleClass="altButton" text="Guardar Cambios" />
+      <ImageView fx:id="imagen" cache="true" fitHeight="179.0" fitWidth="172.0" layoutX="348.0" layoutY="201.0" onMouseClicked="#replaceImagenPlato" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@photo-gallery.png" />
          </image>

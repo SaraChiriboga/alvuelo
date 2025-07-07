@@ -1,100 +1,23 @@
-.labelPlato,  .labelRestaurante{
-    -fx-font-family: 'Poppins ExtraBold', 'Poppins', sans-serif;
-    -fx-font-weight: 800; /* ExtraBold */
-    -fx-font-size: 24px;
-    -fx-text-fill: #000000;
-}
-
-.separator:horizontal .line {
-    -fx-border-color: #aca4a4;   /* color de la línea */
-    -fx-border-width: 2px 0 0 0; /* línea superior de 2px */
-    -fx-border-style: solid;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-}
-
-.combo-box {
-    -fx-background-color: #CB5353;
-    -fx-border-color: #c23939;
-    -fx-border-radius: 8px;
-    -fx-background-radius: 8px;
-    -fx-padding: 4 6 4 6;
-    -fx-font-family: 'Poppins', sans-serif;
-    -fx-font-size: 14px;
-    -fx-text-fill: WHITE;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);
-}
-
-.combo-box .arrow{
-    -fx-background-color: WHITE;
-}
-
-.combo-box .list-cell {
-    -fx-text-fill: #c23939;
-    -fx-background-color: WHITE;
-    -fx-background-radius: 20px;
-}
-
-/* Fondo del área de pestañas */
-.tab-pane {
-    -fx-tab-min-width: 100;
-    -fx-tab-max-width: 120;
-    -fx-tab-min-height: 40;
-    -fx-background-color: #f5f5f5;
-    -fx-border-color: transparent;
-    -fx-border-radius: 20;
-    -fx-background-radius: 20;
-}
-
-/* Fondo de las pestañas (headers) */
-.tab-pane .tab-header-area {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #dddddd;
-    -fx-border-width: 0 0 1 0;
-    -fx-border-radius: 20;
-    -fx-background-radius: 20;
-    -fx-cursor: hand;
-}
-
-/* Botones de las pestañas */
-.tab-pane .tab {
+.exitButton{
     -fx-background-color: transparent;
-    -fx-padding: 10px;
-    -fx-border-radius: 8 8 0 0;
-    -fx-background-radius: 8 8 0 0;
+    -fx-text-fill: #c23939;
+    -fx-font-size: 20px;
 }
 
-/* Texto de las pestañas */
-.tab-pane .tab-label {
-    -fx-text-fill: #666666;
-    -fx-font-family: "Poppins", sans-serif;
-    -fx-font-size: 15px;
-    -fx-font-weight: 300;
+#labelId{
+    -fx-font-family: 'Poppins ExtraBold', 'Poppins', sans-serif;
+    -fx-font-size: 20px;
 }
 
-/* Pestaña seleccionada */
-.tab-pane .tab:selected {
+.altButton {
     -fx-background-color: #c23939;
-    -fx-text-fill: white;
-    -fx-border-color: transparent;
-    -fx-focus-color: transparent;
-    -fx-faint-focus-color: transparent;
-
+    -fx-text-fill: WHITE;
+    -fx-font-size: 15px;
 }
 
-/* Texto de la pestaña seleccionada */
-.tab-pane .tab:selected .tab-label {
-    -fx-text-fill: white;
-}
-
-/* Contenido del Tab */
-.tab-pane .tab-content-area {
-    -fx-background-color: white;
-    -fx-padding: 15;
-    -fx-border-color: #dddddd;
-    -fx-border-width: 1;
-    -fx-border-radius: 0 0 8 8;
-    -fx-background-radius: 0 0 8 8;
+.labelForm{
+    -fx-font-family: 'Poppins ExtraBold', 'Poppins', sans-serif;
+    -fx-font-size: 15px;
 }
 
 .estado-switch {
@@ -182,6 +105,5 @@
     -fx-effect: none;
     -fx-padding: 5 0;
 }
-
 
 

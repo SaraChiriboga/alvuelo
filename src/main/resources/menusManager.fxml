@@ -56,19 +56,19 @@
             </TabPane>
             <AnchorPane layoutX="52.0" layoutY="162.0" prefHeight="355.0" prefWidth="626.0">
                <children>
-                  <Pane layoutX="361.0" layoutY="12.0" prefHeight="315.0" prefWidth="251.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;">
+                  <Pane layoutX="361.0" layoutY="8.0" prefHeight="315.0" prefWidth="251.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;">
                      <children>
-                        <Label layoutX="25.0" layoutY="11.0" styleClass="labelPlato" text="Plato" />
-                        <TextField fx:id="nombre" layoutX="22.0" layoutY="67.0" prefHeight="25.0" prefWidth="206.0" />
-                        <Label layoutX="25.0" layoutY="46.0" prefHeight="17.0" prefWidth="45.0" text="Nombre" />
-                        <TextField fx:id="ingredientes" layoutX="24.0" layoutY="117.0" prefHeight="25.0" prefWidth="206.0" />
-                        <Label layoutX="27.0" layoutY="97.0" prefHeight="17.0" prefWidth="79.0" text="Ingredientes" />
-                        <TextField fx:id="precio" layoutX="24.0" layoutY="175.0" prefHeight="25.0" prefWidth="206.0" />
-                        <Label layoutX="27.0" layoutY="154.0" prefHeight="17.0" prefWidth="79.0" text="Precio" />
-                        <TextField fx:id="id" layoutX="24.0" layoutY="229.0" prefHeight="25.0" prefWidth="98.0" />
-                        <Label layoutX="27.0" layoutY="208.0" prefHeight="17.0" prefWidth="79.0" text="ID" />
-                        <ToggleButton fx:id="estadoToggle" layoutX="131.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#alternarEstado" prefHeight="29.0" prefWidth="99.0" styleClass="estado-switch" text="Disponible" />
-                        <Button fx:id="addButton" layoutX="22.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#addPlato" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: c23939;" text="Agregar" textFill="WHITE">
+                        <Label layoutX="25.0" layoutY="9.0" styleClass="labelPlato" text="Plato" />
+                        <TextField fx:id="nombre" layoutX="22.0" layoutY="60.0" prefHeight="25.0" prefWidth="206.0" />
+                        <Label layoutX="25.0" layoutY="43.0" prefHeight="17.0" prefWidth="45.0" text="Nombre" />
+                        <TextField fx:id="ingredientes" layoutX="24.0" layoutY="120.0" prefHeight="25.0" prefWidth="206.0" />
+                        <Label layoutX="27.0" layoutY="100.0" prefHeight="17.0" prefWidth="79.0" text="Ingredientes" />
+                        <TextField fx:id="precio" layoutX="24.0" layoutY="180.0" prefHeight="25.0" prefWidth="206.0" />
+                        <Label layoutX="27.0" layoutY="159.0" prefHeight="17.0" prefWidth="79.0" text="Precio" />
+                        <TextField fx:id="id" layoutX="24.0" layoutY="239.0" prefHeight="25.0" prefWidth="98.0" />
+                        <Label layoutX="27.0" layoutY="218.0" prefHeight="17.0" prefWidth="79.0" text="ID" />
+                        <ToggleButton fx:id="estadoToggle" layoutX="131.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#alternarEstado" prefHeight="29.0" prefWidth="99.0" styleClass="estado-switch" text="Disponible" />
+                        <Button fx:id="addButton" layoutX="22.0" layoutY="286.0" mnemonicParsing="false" onMouseClicked="#addPlato" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: c23939;" text="Agregar" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -88,7 +88,7 @@
                   </TextField>
                   <Button fx:id="eliminarButton" layoutX="198.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#deletePlato" style="-fx-background-color: c23939;" text="➖" textFill="WHITE" />
                   <Button fx:id="editarButton" layoutX="237.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#editPlato" style="-fx-background-color: c23939;" text="🔧" textFill="WHITE" />
-                  <ScrollPane hbarPolicy="NEVER" layoutX="25.0" layoutY="60.0" prefHeight="262.0" prefWidth="315.0" style="-fx-background-color: WHITE;">
+                  <ScrollPane hbarPolicy="NEVER" layoutX="25.0" layoutY="60.0" prefHeight="262.0" prefWidth="315.0" style="-fx-background-color: WHITE;" stylesheets="@main-style.css">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="318.0" style="-fx-background-color: WHITE;">
                            <children>
