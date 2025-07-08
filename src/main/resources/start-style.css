@@ -1,0 +1,28 @@
+.label{
+    -fx-font-family: 'Poppins', 'Poppins', sans-serif;
+    -fx-font-size: 15px;
+    -fx-text-fill: #852221;
+}
+
+.button {
+    -fx-background-color: #852221;
+    -fx-font-family: 'Poppins', sans-serif;
+    -fx-font-size: 15px;
+    -fx-text-fill: WHITE;
+    -fx-background-radius: 15px;
+    -fx-cursor: hand; /* Cambia el cursor a una mano al pasar el mouse */
+    
+    /* Transición suave para animar cambios */
+    -fx-transition: all 1s ease;
+}
+
+.button:hover {
+    -fx-background-color: #a82c2a; /* Color más claro al hacer hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 0, 5, 0, 0); /* Sombra sutil */
+    -fx-translate-y: -2px; /* Efecto de levitación (opcional) */
+}
+
+
+.combo-box{
+    -fx-background-color: transparent;
+}

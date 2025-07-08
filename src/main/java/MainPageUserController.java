@@ -1,10 +1,14 @@
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -28,10 +32,12 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MainPageUserController implements Initializable {
-
     // Conexión a base de datos
     private DataBaseAlvuelo db = new DataBaseAlvuelo();
     private Connection alvuelo = db.getConnection();
+
+    @FXML
+    private AnchorPane mainPane;
 
     @FXML
     private StackPane stackContentArea;
@@ -41,9 +47,6 @@ public class MainPageUserController implements Initializable {
 
     @FXML
     private ComboBox<String> comboCampus;
-
-    @FXML
-    private ComboBox<String> comboServicio;
 
     @FXML
     private Label labelBienvenida;
@@ -58,8 +61,6 @@ public class MainPageUserController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle)  {
         comboCampus.getItems().addAll("UdlaPark", "Granados", "Colón"); // Agrega los campus disponibles al
         comboCampus.getSelectionModel().select("UdlaPark"); // Selecciona UdlaPark por defecto
-        comboServicio.getItems().addAll("Pick-up", "Entrega");
-        comboServicio.getSelectionModel().select("Pick-up"); // Selecciona Pick-up por defecto
 
         try {
             loadRestaurantes();
@@ -212,6 +213,35 @@ public class MainPageUserController implements Initializable {
 
         statement.close();
         rs.close();
+    }
+
+    private void animacionEntrada() {
+        // Asegurarse de que todos los nodos empiecen invisibles
+        for (Node node : mainPane.getChildren()) {
+            node.setOpacity(0); // Opacidad inicial en 0
+        }
+
+        // Aplicar animación a cada hijo del contenedor principal
+        for (Node node : mainPane.getChildren()) {
+            // FadeIn más lento (duración aumentada)
+            FadeTransition fadeIn = new FadeTransition(Duration.millis(1000), node); // 1 segundo de fade
+            fadeIn.setFromValue(0); // Empieza transparente
+            fadeIn.setToValue(1);   // Termina completamente visible
+
+            // Desplazamiento hacia arriba (más suave)
+            TranslateTransition slideUp = new TranslateTransition(Duration.millis(800), node);
+            slideUp.setFromY(30);  // Empieza 30 píxeles más abajo
+            slideUp.setToY(0);     // Termina en su posición original
+
+            // Retraso escalonado para un efecto secuencial
+            int index = mainPane.getChildren().indexOf(node);
+            fadeIn.setDelay(Duration.millis(150 * index));  // Cada elemento aparece 150ms después
+            slideUp.setDelay(Duration.millis(150 * index)); // Sincronizado con el fade
+
+            // Combinar animaciones y ejecutar
+            ParallelTransition combinedAnimation = new ParallelTransition(fadeIn, slideUp);
+            combinedAnimation.play();
+        }
     }
 }
 

@@ -107,3 +107,49 @@
 }
 
 
+
+/* Estilo base del ComboBox */
+.combo-box {
+    -fx-background-color: transparent;
+    -fx-border-color: GREY;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+/* Estilo de la lista desplegable (popup) */
+.combo-box .list-view {
+    -fx-background-color: white; /* Fondo de la lista */
+    -fx-background-radius: 15px; /* Bordes redondeados */
+    -fx-border-radius: 15px;
+    -fx-border-color: GREY;
+}
+
+/* Estilo de las celdas (items) en la lista desplegable */
+.combo-box .list-cell {
+    -fx-background-color: transparent; /* Color normal */
+    -fx-text-fill: black; /* Color del texto */
+    -fx-font-family: 'Poppins', sans-serif;
+}
+
+/* Efecto hover en las celdas */
+.combo-box .list-cell:hover {
+    -fx-background-color: #852221; /* Color de hover deseado */
+    -fx-text-fill: white; /* Texto en blanco para mejor contraste */
+}
+
+/* Estilo cuando una celda está seleccionada */
+.combo-box .list-cell:filled:selected {
+    -fx-background-color: #852221; /* Color cuando está seleccionado */
+    -fx-text-fill: white;
+}
+
+/* Estilo de la flecha del ComboBox */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+.combo-box .arrow {
+    -fx-background-color: GREY; /* Color de la flecha */
+}
+
+
+
