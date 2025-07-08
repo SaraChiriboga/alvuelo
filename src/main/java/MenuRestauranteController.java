@@ -102,22 +102,6 @@ public class MenuRestauranteController implements Initializable {
     public void setPedido(Pedido pedido) {
         this.pedidoActual = pedido;
     }
-    @FXML
-    private void irAlCarrito(javafx.scene.input.MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CarritoView.fxml"));
-            Parent root = loader.load();
-
-            CarritoManagerController controller = loader.getController();
-
-            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual(); // <- debe estar bien inicializado
-            controller.cargarCarrito(pedido.getCarrito());
-
-            stackContentArea.getChildren().setAll(root); // <- debe estar inyectado correctamente
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void home(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mainPageUser.fxml"));
@@ -151,15 +135,15 @@ public class MenuRestauranteController implements Initializable {
 
     public void loadCategoria(String cat) throws SQLException {
         VBox selectedList = null;
-        if(cat.equals("Desayuno")){
+        if (cat.equals("Desayuno")) {
             selectedList = listaDesayunos;
-        } else if(cat.equals("Almuerzo")){
+        } else if (cat.equals("Almuerzo")) {
             selectedList = listaAlmuerzos;
-        } else if(cat.equals("Merienda")){
+        } else if (cat.equals("Merienda")) {
             selectedList = listaMeriendas;
-        } else if(cat.equals("Snacks")){
+        } else if (cat.equals("Snacks")) {
             selectedList = listaSnacks;
-        } else if(cat.equals("Bebidas")){
+        } else if (cat.equals("Bebidas")) {
             selectedList = listaBebibas;
         } else {
             System.out.println("Categoría no válida: " + cat);
@@ -230,7 +214,7 @@ public class MenuRestauranteController implements Initializable {
                 }
                 imagen.setPreserveRatio(true);
                 imagen.setSmooth(true);
-                if (imagen.getImage().getWidth() / imagen.getImage().getHeight() > 87.0/80.0) {
+                if (imagen.getImage().getWidth() / imagen.getImage().getHeight() > 87.0 / 80.0) {
                     imagen.setFitWidth(87);
                 } else {
                     imagen.setFitHeight(80);
@@ -533,7 +517,7 @@ public class MenuRestauranteController implements Initializable {
         }
     }
 
-    public void loadInfo(String nombreRestaurante){
+    public void loadInfo(String nombreRestaurante) {
         String sql = "SELECT * FROM alvuelo_db.restaurantes WHERE nombre = ?";
         try (PreparedStatement statement = alvuelo.prepareStatement(sql)) {
             statement.setString(1, nombreRestaurante);
@@ -551,22 +535,20 @@ public class MenuRestauranteController implements Initializable {
         }
     }
 
-<<<<<<< HEAD
     @FXML
     private void irAlCarrito(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarritoView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CarritoView.fxml"));
             Parent root = loader.load();
 
-            PagosManagerController controller = loader.getController();
-            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual();
-            controller.cargarPedido(pedido);
-            stackContentArea.getChildren().setAll(root);
+            CarritoManagerController controller = loader.getController();
+
+            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual(); // <- debe estar bien inicializado
+            controller.cargarCarrito(pedido.getCarrito());
+
+            stackContentArea.getChildren().setAll(root); // <- debe estar inyectado correctamente
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-=======
->>>>>>> 859006d9303c23df2d6deffcf86eb6c550f80994
 }

@@ -1,9 +1,11 @@
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import menus.Plato;
 
@@ -41,14 +43,13 @@ public class CarritoManagerController implements Initializable {
     @FXML
     private Label mensajeTarjeta;
 
+
     private LinkedList<Plato> carrito = new LinkedList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nombreCol.setCellValueFactory(cell -> new javafx.beans.property.SimpleStringProperty(cell.getValue().getNombre()));
-        precioCol.setCellValueFactory(cell -> new javafx.beans.property.SimpleDoubleProperty(cell.getValue().getPrecio()).asObject());
-
-        actualizarTabla();
+        nombreCol.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        precioCol.setCellValueFactory(new PropertyValueFactory<>("precio"));
     }
 
     public void cargarCarrito(LinkedList<Plato> carrito) {
