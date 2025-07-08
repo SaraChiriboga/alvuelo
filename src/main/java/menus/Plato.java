@@ -32,4 +32,7 @@ public class Plato {
     public void setIdPlato(int idPlato) {
         this.idPlato = idPlato;
     }
+
+    public void setCantidad(int quantity) {
+    }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ProductoCarritoController"
+      spacing="10" alignment="CENTER_LEFT"
+      prefHeight="80.0" prefWidth="316.0"
+      style="-fx-background-color: white; -fx-background-radius: 10px; -fx-padding: 10px;">
+
+    <ImageView fx:id="imagenProducto" fitWidth="60" fitHeight="60" />
+
+    <VBox spacing="5">
+        <Label fx:id="nombreProducto" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label fx:id="precioProducto" style="-fx-text-fill: #333;" />
+    </VBox>
+
+    <Pane HBox.hgrow="ALWAYS" />
+
+    <HBox spacing="5" alignment="CENTER_RIGHT">
+        <Button fx:id="eliminarBtn" text="🗑" />
+        <Button fx:id="disminuirBtn" text="−" />
+        <Label fx:id="cantidadLabel" text="1" />
+        <Button fx:id="aumentarBtn" text="+" />
+    </HBox>
+</HBox>

@@ -9,11 +9,37 @@ import java.util.LinkedList;
 public abstract class Pedido extends Restaurante {
     private int idPedido;
     private Usuario cliente;
-    private LinkedList<Plato> carrito;
+    private LinkedList<Plato> carrito = new LinkedList<>();
     private String estado;
+    private String campus;
+    private String nombreRestaurante;
 
     public Pedido(String horario, String ubicacion, String nombre, String idRestaurante, boolean activo) {
         super(horario, ubicacion, nombre, idRestaurante, activo);
+    }
+
+    public Pedido() {
+        super();
+    }
+
+    public void setNombreRestaurante(String nombreRestaurante) {
+        this.nombreRestaurante = nombreRestaurante;
+    }
+
+    public void setCampus(String campus) {
+        this.campus = campus;
+    }
+
+    public void setCliente(Usuario cliente) {
+        this.cliente = cliente;
+    }
+
+    public String getNombreRestaurante() {
+        return nombreRestaurante;
+    }
+
+    public String getCampus() {
+        return campus;
     }
 
     public Usuario getCliente() {
@@ -48,4 +74,13 @@ public abstract class Pedido extends Restaurante {
     public void visualizarPedido(){
 
     }
+    public abstract void confirmarEntrega();
+
+    public void agregarPlato(Plato p) {
+        carrito.add(p);
+    }
+    public int generarCodigo() {
+        return (int) (Math.random() * 9000) + 1000; // Genera un número entre 1000 y 9999
+    }
+
 }
