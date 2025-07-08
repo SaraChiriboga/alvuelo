@@ -531,4 +531,7 @@ public class MenuRestauranteController implements Initializable {
 
     public void goToCarrito(MouseEvent event) {
     }
+
+    public void setPedido(Pedido pedidoActual) {
+    }
 }

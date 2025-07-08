@@ -54,9 +54,6 @@ public class MainPageUserController implements Initializable {
     private ComboBox<String> comboCampus;
 
     @FXML
-    private ComboBox<String> comboServicio;
-
-    @FXML
     private Label labelBienvenida;
 
     @FXML
@@ -205,6 +202,14 @@ public class MainPageUserController implements Initializable {
                         controller.loadLogo(nombre);
                         controller.loadInfo(nombre);
                         controller.loadMenus();
+
+                        if (pedidoActual == null || !pedidoActual.getNombreRestaurante().equals(nombre)) {
+                            pedidoActual = new Retiro(); // Por defecto puede ser Retiro
+                            pedidoActual.setNombreRestaurante(nombre);
+                            pedidoActual.setCampus(campus);
+                        }
+
+                        controller.setPedido(pedidoActual);
 
                         stackContentArea.getChildren().clear();
                         stackContentArea.getChildren().add(fxml);
