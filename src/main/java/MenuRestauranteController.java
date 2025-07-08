@@ -537,7 +537,7 @@ public class MenuRestauranteController implements Initializable {
     @FXML
     private void irAlCarrito(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CarritoView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarritoView.fxml"));
             Parent root = loader.load();
 
             PagosManagerController controller = loader.getController();

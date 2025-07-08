@@ -8,6 +8,7 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@restaurante-pane-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RestaurantesManagerController">
    <children>
@@ -27,7 +28,15 @@
             <DropShadow />
          </effect>
          <children>
-            <Label fx:id="comisiones" layoutX="8.0" layoutY="23.0" text="Ingresos por Comisión" textFill="WHITE" />
+            <Label fx:id="comisiones" layoutX="7.0" layoutY="15.0" prefHeight="78.0" prefWidth="172.0" text="Ingresos por Comisión" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+            <Label layoutX="32.0" layoutY="86.0" text="\$ 2589.78" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Regular" size="27.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane layoutX="272.0" layoutY="105.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
@@ -35,7 +44,12 @@
             <DropShadow />
          </effect>
          <children>
-            <Label fx:id="ventas" layoutX="22.0" layoutY="22.0" text="Número de ventas" textFill="WHITE" />
+            <Label fx:id="ventas" layoutX="26.0" layoutY="15.0" prefHeight="70.0" prefWidth="135.0" text="Número de ventas" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Label layoutX="65.0" layoutY="85.0" text="1034" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Regular" size="27.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane layoutX="497.0" layoutY="105.0" prefHeight="139.0" prefWidth="186.0" style="-fx-background-color: CB5353; -fx-background-radius: 20;">
@@ -43,7 +57,12 @@
             <DropShadow />
          </effect>
          <children>
-            <Label fx:id="numusuarios" layoutX="27.0" layoutY="23.0" text="Total de usuarios" textFill="WHITE" />
+            <Label fx:id="numusuarios" layoutX="32.0" layoutY="11.0" prefHeight="78.0" prefWidth="123.0" text="Total de usuarios" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Label layoutX="68.0" layoutY="87.0" text="245" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Regular" size="27.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Button fx:id="agregarButton" layoutX="582.0" layoutY="267.0" mnemonicParsing="false" onMousePressed="#addRestaurante" text="✚" />

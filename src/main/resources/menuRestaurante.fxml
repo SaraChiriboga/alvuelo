@@ -11,12 +11,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <StackPane fx:id="stackContentArea" alignment="TOP_CENTER" maxHeight="812.0" maxWidth="375.0" minHeight="812.0" minWidth="375.0" prefHeight="812.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuRestauranteController">
    <children>
       <ScrollPane fx:id="pGeneral" stylesheets="@main-style.css">
          <content>
-            <AnchorPane maxWidth="375.0" minWidth="375.0" prefHeight="1500.0" prefWidth="375.0" style="-fx-background-image: url('/bckgrnd.png');">
+            <AnchorPane maxWidth="375.0" minWidth="375.0" prefHeight="2500.0" prefWidth="375.0" style="-fx-background-image: url('/bckgrnd.png');">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
