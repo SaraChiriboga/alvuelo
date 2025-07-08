@@ -148,10 +148,11 @@
                         <Image url="@store.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="41.0" fitWidth="38.0" onMouseClicked="#goToCarrito" pickOnBounds="true" preserveRatio="true" smooth="false">
+                  <ImageView fitHeight="41.0" fitWidth="38.0" onMouseClicked="#irAlCarrito" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@shoppingcar.png" />
                      </image>
+
                   </ImageView>
                   <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>

@@ -22,6 +22,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
 import menus.Plato;
+import pedidos.ContextoSesion;
 import pedidos.Pedido;
 import servicios.Retiro;
 
@@ -96,6 +97,10 @@ public class MenuRestauranteController implements Initializable {
 
     public void setNombreRestaurante(String nombreRestaurante) {
         this.nombreRestaurante = nombreRestaurante;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedidoActual = pedido;
     }
 
     public void home(MouseEvent event) throws IOException {
@@ -529,9 +534,19 @@ public class MenuRestauranteController implements Initializable {
         }
     }
 
-    public void goToCarrito(MouseEvent event) {
+    @FXML
+    private void irAlCarrito(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CarritoView.fxml"));
+            Parent root = loader.load();
+
+            PagosManagerController controller = loader.getController();
+            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual();
+            controller.cargarPedido(pedido);
+            stackContentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void setPedido(Pedido pedidoActual) {
-    }
 }

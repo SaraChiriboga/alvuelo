@@ -24,6 +24,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import pedidos.ContextoSesion;
 import pedidos.Pedido;
 import servicios.EnRestaurante;
 import servicios.Entrega;
@@ -204,7 +205,7 @@ public class MainPageUserController implements Initializable {
                         controller.loadMenus();
 
                         if (pedidoActual == null || !pedidoActual.getNombreRestaurante().equals(nombre)) {
-                            pedidoActual = new Retiro(); // Por defecto puede ser Retiro
+                            pedidoActual = new Entrega();
                             pedidoActual.setNombreRestaurante(nombre);
                             pedidoActual.setCampus(campus);
                         }
@@ -264,9 +265,9 @@ public class MainPageUserController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CarritoView.fxml"));
             Parent root = loader.load();
 
-            // Aquí puedes pasar el pedido actual si lo tienes
             CarritoManagerController controller = loader.getController();
-            controller.cargarCarrito(pedidoActual.getCarrito());
+            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual();
+            controller.cargarCarrito(pedido.getCarrito());
 
             stackContentArea.getChildren().clear();
             stackContentArea.getChildren().add(root);
