@@ -102,6 +102,22 @@ public class MenuRestauranteController implements Initializable {
     public void setPedido(Pedido pedido) {
         this.pedidoActual = pedido;
     }
+    @FXML
+    private void irAlCarrito(javafx.scene.input.MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CarritoView.fxml"));
+            Parent root = loader.load();
+
+            CarritoManagerController controller = loader.getController();
+
+            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual(); // <- debe estar bien inicializado
+            controller.cargarCarrito(pedido.getCarrito());
+
+            stackContentArea.getChildren().setAll(root); // <- debe estar inyectado correctamente
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void home(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mainPageUser.fxml"));
@@ -355,6 +371,7 @@ public class MenuRestauranteController implements Initializable {
             pedidoActual = new Retiro(); // o Entrega o EnRestaurante, según el default
             pedidoActual.setNombreRestaurante(nombreRestaurante);
             pedidoActual.setCampus(campus);
+            ContextoSesion.getInstancia().setPedidoActual(pedidoActual); // ✅ GUARDA EN CONTEXTO
         }
 
         // Crear el plato con la cantidad correspondiente
@@ -531,21 +548,6 @@ public class MenuRestauranteController implements Initializable {
             }
         } catch (SQLException e) {
             System.err.println("Error al cargar información del restaurante: " + e.getMessage());
-        }
-    }
-
-    @FXML
-    private void irAlCarrito(MouseEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CarritoView.fxml"));
-            Parent root = loader.load();
-
-            PagosManagerController controller = loader.getController();
-            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual();
-            controller.cargarPedido(pedido);
-            stackContentArea.getChildren().setAll(root);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
