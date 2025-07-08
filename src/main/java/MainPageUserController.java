@@ -194,6 +194,29 @@ public class MainPageUserController implements Initializable {
                     card.setTranslateY(0);
                 });
 
+                // Use the local variable restauranteId here
+                card.setOnMouseClicked(e -> {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("menuRestaurante.fxml"));
+                        Parent fxml = loader.load();
+                        MenuRestauranteController controller = loader.getController();
+                        controller.setNombreRestaurante(nombre);
+                        controller.setCampus(campus);
+                        controller.loadLogo(nombre);
+                        controller.loadInfo(nombre);
+                        controller.loadMenus();
+
+                        stackContentArea.getChildren().clear();
+                        stackContentArea.getChildren().add(fxml);
+
+                    } catch (IOException ex) {
+                        System.err.println("Error al cargar menuRestaurante.fxml: " + ex.getMessage());
+                        ex.printStackTrace();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                });
+
             }
         }
 
@@ -233,7 +256,7 @@ public class MainPageUserController implements Initializable {
     @FXML
     private void irAlCarrito(javafx.scene.input.MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("carrito.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarritoView.fxml"));
             Parent root = loader.load();
 
             // Aquí puedes pasar el pedido actual si lo tienes
