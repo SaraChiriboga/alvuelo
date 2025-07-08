@@ -16,6 +16,14 @@ public abstract class Pedido extends Restaurante {
         super(horario, ubicacion, nombre, idRestaurante, activo);
     }
 
+    public Usuario getCliente() {
+        return cliente;
+    }
+
+    public LinkedList<Plato> getCarrito() {
+        return carrito;
+    }
+
     //REALIZAR PEDIDO
     public void realizarPedido(){
 

@@ -20,7 +20,6 @@ public class Admin extends Usuario {
         return this.correo;
     }
 
-    // Métodos setters (los que ya tienes)
     public void setIdBanner(String idBanner) {
         this.idBanner = idBanner;
     }

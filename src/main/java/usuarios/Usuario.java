@@ -11,4 +11,8 @@ public class Usuario {
         this.nombre = nombre;
         this.correo = correo;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
 }
