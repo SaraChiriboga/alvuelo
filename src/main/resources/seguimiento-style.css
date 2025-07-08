@@ -1,0 +1,61 @@
+.header1{
+    -fx-font-family: 'Poppins ExtraBold', sans-serif;
+    -fx-font-size: 30px;
+    -fx-text-fill: #000000;
+}
+
+.label1{
+    -fx-font-family: 'Poppins ExtraBold', sans-serif;
+    -fx-font-size: 15px;
+    -fx-text-fill: #000000; 
+}
+
+.p{
+    -fx-font-size: 12px;
+    -fx-text-fill: #000000;
+}
+
+.numPIN{
+    -fx-font-family: 'Poppins ExtraBold', sans-serif;
+    -fx-font-size: 30px;
+    -fx-text-fill: #a82c2a;
+}
+
+/* Estilo principal para la barra de progreso */
+.progress-bar {
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 2;
+}
+
+/* Track (fondo de la barra) */
+.progress-bar > .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+    -fx-padding: 0.5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0.5, 0, 1);
+}
+
+/* Bar (parte que se llena) */
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(to right, #a82c2a, #d14543);
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+    -fx-padding: 0.5px;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.3), 3, 0.5, 0, 1);
+}
+
+/* Estilo para barra indeterminada */
+.progress-bar:indeterminate > .bar {
+    -fx-background-color: linear-gradient(to right, transparent, #a82c2a, transparent);
+}
+
+/* Texto dentro de la barra de progreso (si se muestra) */
+.progress-bar .text {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 1, 0.5, 0, 1);
+}
