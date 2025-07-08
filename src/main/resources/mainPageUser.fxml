@@ -25,7 +25,7 @@
                         <Image url="@store.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" smooth="false" onMouseClicked="#irAlCarrito">
+                  <ImageView fitHeight="41.0" fitWidth="38.0" onMouseClicked="#irAlCarrito" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@shoppingcar.png" />
                      </image>
@@ -42,7 +42,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="298.0">
                      <children>
-                        <VBox fx:id="vCont" layoutY="-8.0" prefHeight="512.0" prefWidth="298.0" />
+                        <VBox fx:id="vCont" layoutY="4.0" prefHeight="500.0" prefWidth="298.0" />
                      </children>
                   </AnchorPane>
               </content>

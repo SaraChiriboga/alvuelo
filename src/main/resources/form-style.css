@@ -129,6 +129,7 @@
     -fx-background-color: transparent; /* Color normal */
     -fx-text-fill: black; /* Color del texto */
     -fx-font-family: 'Poppins', sans-serif;
+    -fx-font-size: 12px;
 }
 
 /* Efecto hover en las celdas */
@@ -141,6 +142,8 @@
 .combo-box .list-cell:filled:selected {
     -fx-background-color: #852221; /* Color cuando está seleccionado */
     -fx-text-fill: white;
+     -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
 }
 
 /* Estilo de la flecha del ComboBox */

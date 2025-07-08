@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminLoginController">
+<StackPane fx:id="stackContentArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminLoginController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url('/bckgrnd.png');">
          <children>
@@ -45,7 +46,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField />
+                              <TextField fx:id="email" />
                            </children>
                         </VBox>
                         <VBox prefHeight="78.0" prefWidth="330.0">
@@ -55,10 +56,10 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField />
+                              <PasswordField fx:id="password" />
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="330.0" stylesheets="@start-style.css" text="Ingresar" />
+                        <Button mnemonicParsing="false" onMouseClicked="#ingresarManager" prefHeight="25.0" prefWidth="330.0" stylesheets="@start-style.css" text="Ingresar" />
                      </children>
                   </VBox>
                </children>

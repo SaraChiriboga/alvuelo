@@ -54,6 +54,9 @@ public class MainPageUserController implements Initializable {
     private ComboBox<String> comboCampus;
 
     @FXML
+    private ComboBox<String> comboServicio;
+
+    @FXML
     private Label labelBienvenida;
 
     @FXML
@@ -237,7 +240,6 @@ public class MainPageUserController implements Initializable {
         statement.close();
         rs.close();
     }
-<<<<<<< HEAD
 
     private void animacionEntrada() {
         // Asegurarse de que todos los nodos empiecen invisibles
@@ -265,7 +267,9 @@ public class MainPageUserController implements Initializable {
             // Combinar animaciones y ejecutar
             ParallelTransition combinedAnimation = new ParallelTransition(fadeIn, slideUp);
             combinedAnimation.play();
-=======
+        }
+    }
+
     @FXML
     private void irAlCarrito(javafx.scene.input.MouseEvent event) {
         try {
@@ -280,7 +284,6 @@ public class MainPageUserController implements Initializable {
             stackContentArea.getChildren().add(root);
         } catch (IOException e) {
             e.printStackTrace();
->>>>>>> ad4b1c01d3879bcc13b12e82ef0c85ec64cc8e05
         }
     }
 }

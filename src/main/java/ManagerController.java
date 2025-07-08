@@ -22,6 +22,8 @@ public class ManagerController implements Initializable {
     @FXML
     public StackPane stackContentArea;
     @FXML
+    public StackPane stack;
+    @FXML
     private Button cerrar;
     @FXML
     private Button minimizar;
@@ -110,5 +112,14 @@ public class ManagerController implements Initializable {
     // cambiar el color de los botones al presionarlos
     private void changeButtonColor(Button boton, String hexBack, String hexText) {
         boton.setStyle("-fx-background-color: " + hexBack + "; -fx-text-fill: " + hexText + ";");
+    }
+
+    public void logout(MouseEvent event) throws IOException {
+        // Cargar la pantalla principal
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("loginAdmin.fxml"));
+        Parent root = loader.load();
+
+        stack.getChildren().clear();
+        stack.getChildren().add(root);
     }
 }

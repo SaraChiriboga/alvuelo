@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@restaurante-pane-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RestaurantesManagerController">
    <children>
-      <TableView fx:id="tablaRestaurantes" layoutX="14.0" layoutY="314.0" prefHeight="244.0" prefWidth="702.0">
+      <TableView fx:id="tablaRestaurantes" layoutX="14.0" layoutY="314.0" prefHeight="244.0" prefWidth="702.0" stylesheets="@main-style.css">
         <columns>
           <TableColumn fx:id="id" prefWidth="62.0" text="ID" />
           <TableColumn fx:id="nombre" prefWidth="105.0" text="Nombre" />

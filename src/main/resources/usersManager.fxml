@@ -10,9 +10,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="758.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@restaurante-pane-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UsersManagerController">
+
+<AnchorPane maxHeight="600.0" maxWidth="729.0" minHeight="600.0" minWidth="729.0" prefHeight="600.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@restaurante-pane-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UsersManagerController">
    <children>
-      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="758.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;">
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="758.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" stylesheets="@main-style.css">
          <content>
             <AnchorPane fx:id="contentPane" minHeight="1000.0" prefHeight="1000.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;">
                <children>
@@ -32,17 +33,17 @@
                   <Button layoutX="52.0" layoutY="357.0" mnemonicParsing="false" onAction="#addRepartidor" prefHeight="26.0" prefWidth="119.0" styleClass="manageButtons" text="✚ Agregar" wrapText="true" />
                   <Button layoutX="52.0" layoutY="405.0" mnemonicParsing="false" onAction="#deleteRepartidor" prefHeight="26.0" prefWidth="119.0" styleClass="manageButtons" text=" ➖ Eliminar" wrapText="true" />
                   <Button layoutX="52.0" layoutY="456.0" mnemonicParsing="false" onAction="#editRepartidor" prefHeight="26.0" prefWidth="119.0" styleClass="manageButtons" text=" 🔧 Editar" wrapText="true" />
-                  <TableView fx:id="tablaRepartidores" layoutX="207.0" layoutY="352.0" prefHeight="138.0" prefWidth="474.0">
+                  <TableView fx:id="tablaRepartidores" layoutX="207.0" layoutY="352.0" prefHeight="185.0" prefWidth="474.0">
                      <columns>
                         <TableColumn fx:id="idR" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="nombreR" prefWidth="167.2000732421875" text="Nombre" />
                         <TableColumn fx:id="correoR" prefWidth="160.800048828125" text="Correo" />
                      </columns>
                   </TableView>
-                  <Separator layoutX="56.0" layoutY="510.0" prefHeight="6.0" prefWidth="622.0" />
-                  <Label fx:id="admins_label11" layoutX="52.0" layoutY="526.0" styleClass="userLabels" text="Usuarios" textAlignment="CENTER" />
-                  <Button fx:id="deleteUsuario" layoutX="52.0" layoutY="637.0" mnemonicParsing="false" onMouseClicked="#deleteUsuario" prefHeight="26.0" prefWidth="119.0" styleClass="manageButtons" text=" ➖ Eliminar" wrapText="true" />
-                  <TableView fx:id="tablaUsuarios" layoutX="207.0" layoutY="584.0" prefHeight="138.0" prefWidth="474.0">
+                  <Separator layoutX="56.0" layoutY="554.0" prefHeight="6.0" prefWidth="622.0" />
+                  <Label fx:id="admins_label11" layoutX="52.0" layoutY="570.0" styleClass="userLabels" text="Usuarios" textAlignment="CENTER" />
+                  <Button fx:id="deleteUsuario" layoutX="52.0" layoutY="628.0" mnemonicParsing="false" onMouseClicked="#deleteUsuario" prefHeight="26.0" prefWidth="119.0" styleClass="manageButtons" text=" ➖ Eliminar" wrapText="true" />
+                  <TableView fx:id="tablaUsuarios" layoutX="207.0" layoutY="605.0" prefHeight="223.0" prefWidth="474.0" stylesheets="@main-style.css">
                      <columns>
                         <TableColumn fx:id="idU" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="nombreU" prefWidth="114.39996337890625" text="Nombre" />
@@ -50,7 +51,7 @@
                         <TableColumn fx:id="rolU" prefWidth="88.00006103515625" text="Rol" />
                      </columns>
                   </TableView>
-                  <TextField fx:id="barraBusqueda" layoutX="448.0" layoutY="60.0" onAction="#search" prefHeight="31.0" prefWidth="237.0" promptText="🔍 Buscar">
+                  <TextField fx:id="barraBusqueda" layoutX="448.0" layoutY="60.0" onAction="#search" prefHeight="31.0" prefWidth="237.0" promptText="🔍 Buscar" stylesheets="@menu-pane-style.css">
                      <font>
                         <Font size="15.0" />
                      </font>

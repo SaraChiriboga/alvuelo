@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="593.0" prefWidth="735.0" style="-fx-background-color: FFE1CD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenusManagerController">
+<AnchorPane maxHeight="600.0" maxWidth="729.0" minHeight="600.0" minWidth="729.0" prefHeight="600.0" prefWidth="729.0" style="-fx-background-color: FFE1CD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenusManagerController">
    <children>
       <AnchorPane layoutX="2.0" layoutY="45.0" minHeight="0.0" minWidth="0.0" prefHeight="547.0" prefWidth="730.0" style="-fx-background-color: FFE1CD;" stylesheets="@menu-pane-style.css">
          <children>
