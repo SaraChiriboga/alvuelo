@@ -30,6 +30,7 @@ import servicios.EnRestaurante;
 import servicios.Entrega;
 import servicios.Retiro;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -204,13 +205,11 @@ public class MainPageUserController implements Initializable {
                         controller.loadInfo(nombre);
                         controller.loadMenus();
 
-                        if (pedidoActual == null || !pedidoActual.getNombreRestaurante().equals(nombre)) {
-                            pedidoActual = new Entrega();
-                            pedidoActual.setNombreRestaurante(nombre);
-                            pedidoActual.setCampus(campus);
-                        }
+                        Pedido nuevoPedido = new Entrega();
+                        nuevoPedido.setNombreRestaurante(nombre);
+                        nuevoPedido.setCampus(campus);
+                        ContextoSesion.getInstancia().setPedidoActual(nuevoPedido);
 
-                        controller.setPedido(pedidoActual);
 
                         stackContentArea.getChildren().clear();
                         stackContentArea.getChildren().add(fxml);
@@ -260,20 +259,23 @@ public class MainPageUserController implements Initializable {
     }
 
     @FXML
-    private void irAlCarrito(javafx.scene.input.MouseEvent event) {
+    private void irAlCarrito(MouseEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CarritoView.fxml"));
             Parent root = loader.load();
 
             CarritoManagerController controller = loader.getController();
             Pedido pedido = ContextoSesion.getInstancia().getPedidoActual();
-            controller.cargarCarrito(pedido.getCarrito());
 
-            stackContentArea.getChildren().clear();
-            stackContentArea.getChildren().add(root);
+            if (pedido != null) {
+                controller.cargarCarrito(pedido.getCarrito());
+            }
+
+            stackContentArea.getChildren().setAll(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }
 
