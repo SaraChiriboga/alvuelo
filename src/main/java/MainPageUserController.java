@@ -24,13 +24,14 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.input.MouseEvent;
+
 import pedidos.ContextoSesion;
 import pedidos.Pedido;
 import servicios.EnRestaurante;
 import servicios.Entrega;
 import servicios.Retiro;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -261,21 +262,20 @@ public class MainPageUserController implements Initializable {
     @FXML
     private void irAlCarrito(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CarritoView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CarritoView.fxml"));
             Parent root = loader.load();
 
             CarritoManagerController controller = loader.getController();
-            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual();
 
-            if (pedido != null) {
-                controller.cargarCarrito(pedido.getCarrito());
-            }
+            Pedido pedido = ContextoSesion.getInstancia().getPedidoActual(); // <- debe estar bien inicializado
+            controller.cargarCarrito(pedido.getCarrito());
 
-            stackContentArea.getChildren().setAll(root);
+            stackContentArea.getChildren().setAll(root); // <- debe estar inyectado correctamente
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
 }
 

@@ -1,9 +1,13 @@
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.StackPane;
 import menus.Plato;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -27,6 +31,15 @@ public class CarritoManagerController implements Initializable {
 
     @FXML
     private Button continuarPagoBtn;
+
+    @FXML
+    private StackPane stackContentArea;
+
+    @FXML
+    private ComboBox<String> comboMetodoPago;
+
+    @FXML
+    private Label mensajeTarjeta;
 
     private LinkedList<Plato> carrito = new LinkedList<>();
 
@@ -57,11 +70,27 @@ public class CarritoManagerController implements Initializable {
             actualizarTabla();
         }
     }
-
     @FXML
-    public void continuarAPago() {
-        System.out.println("Continuar a la pantalla de pagos");
-        // faltafaltaa
+    private void verificarMetodoPago() {
+        String metodo = comboMetodoPago.getValue();
+        if ("Tarjeta".equals(metodo)) {
+            mensajeTarjeta.setVisible(true);
+        } else {
+            mensajeTarjeta.setVisible(false);
+        }
     }
+    @FXML
+    private void continuarAPago() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("seguimientoEntrega.fxml"));
+            Parent root = loader.load();
+            stackContentArea.getChildren().setAll(root);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
