@@ -63,4 +63,5 @@ public class CarritoManagerController implements Initializable {
         System.out.println("Continuar a la pantalla de pagos");
         // faltafaltaa
     }
+
 }

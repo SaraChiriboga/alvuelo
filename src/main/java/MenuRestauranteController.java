@@ -22,6 +22,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
 import menus.Plato;
+import pedidos.Pedido;
+import servicios.Retiro;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,6 +43,8 @@ public class MenuRestauranteController implements Initializable {
     // Conexión a base de datos
     private DataBaseAlvuelo db = new DataBaseAlvuelo();
     private Connection alvuelo = db.getConnection();
+
+    private Pedido pedidoActual; // inicializado dinámicamente
 
     @FXML
     private Label nombre;
@@ -341,16 +345,26 @@ public class MenuRestauranteController implements Initializable {
 
     // Metodo para agregar al carrito (implementación básica)
     private void addToCart(int plateId, String nombre, double precio, int quantity) {
-        // Aquí implementa tu lógica para agregar al carrito
-        System.out.println("Agregando al carrito - ID: " + plateId + ", Cantidad: " + quantity);
+        // Si no hay pedido aún, se crea uno del tipo que desees (por ahora Retiro como ejemplo)
+        if (pedidoActual == null) {
+            pedidoActual = new Retiro(); // o Entrega o EnRestaurante, según el default
+            pedidoActual.setNombreRestaurante(nombreRestaurante);
+            pedidoActual.setCampus(campus);
+        }
 
+        // Crear el plato con la cantidad correspondiente
         Plato item = new Plato();
         item.setIdPlato(plateId);
         item.setNombre(nombre);
         item.setPrecio(precio);
+        item.setCantidad(quantity);
 
-        carrito.add(item);
+        // Añadir al pedido
+        pedidoActual.agregarPlato(item); // Asegúrate que esta función exista en Pedido
+
+        System.out.println("Agregado al pedido: " + item.getNombre() + " x" + quantity);
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

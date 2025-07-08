@@ -24,6 +24,10 @@ public class Restaurante{
         this.esNuevo = esNuevo;
     }
 
+    public Restaurante() {
+        super();
+    }
+
 
     //constructor
     public Restaurante(String idRestaurante, String nombre, String ubicacion, String horario, boolean activo) {

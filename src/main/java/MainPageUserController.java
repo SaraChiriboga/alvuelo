@@ -24,6 +24,10 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import pedidos.Pedido;
+import servicios.EnRestaurante;
+import servicios.Entrega;
+import servicios.Retiro;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,6 +39,7 @@ public class MainPageUserController implements Initializable {
     // Conexión a base de datos
     private DataBaseAlvuelo db = new DataBaseAlvuelo();
     private Connection alvuelo = db.getConnection();
+    private Pedido pedidoActual;
 
     @FXML
     private AnchorPane mainPane;
@@ -194,6 +199,24 @@ public class MainPageUserController implements Initializable {
                         MenuRestauranteController controller = loader.getController();
                         controller.setNombreRestaurante(nombre);
                         controller.setCampus(campus);
+                        // Crear pedido si aún no existe, según el servicio seleccionado
+                        if (pedidoActual == null) {
+                            String servicio = comboServicio.getValue();
+                            switch (servicio) {
+                                case "Pick-up":
+                                    pedidoActual = new Retiro();
+                                    break;
+                                case "Entrega":
+                                    pedidoActual = new Entrega();
+                                    break;
+                                case "En restaurante":
+                                    pedidoActual = new EnRestaurante();
+                                    break;
+                            }
+                            pedidoActual.setNombreRestaurante(nombre);
+                            pedidoActual.setCampus(campus);
+                        }
+
                         controller.loadLogo(nombre);
                         controller.loadInfo(nombre);
                         controller.loadMenus();
@@ -214,6 +237,7 @@ public class MainPageUserController implements Initializable {
         statement.close();
         rs.close();
     }
+<<<<<<< HEAD
 
     private void animacionEntrada() {
         // Asegurarse de que todos los nodos empiecen invisibles
@@ -241,6 +265,22 @@ public class MainPageUserController implements Initializable {
             // Combinar animaciones y ejecutar
             ParallelTransition combinedAnimation = new ParallelTransition(fadeIn, slideUp);
             combinedAnimation.play();
+=======
+    @FXML
+    private void irAlCarrito(javafx.scene.input.MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("carrito.fxml"));
+            Parent root = loader.load();
+
+            // Aquí puedes pasar el pedido actual si lo tienes
+            CarritoManagerController controller = loader.getController();
+            controller.cargarCarrito(pedidoActual.getCarrito());
+
+            stackContentArea.getChildren().clear();
+            stackContentArea.getChildren().add(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+>>>>>>> ad4b1c01d3879bcc13b12e82ef0c85ec64cc8e05
         }
     }
 }
